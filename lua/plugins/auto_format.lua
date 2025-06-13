@@ -20,7 +20,7 @@ return {
 				sh = { "shfmt" },
 				go = { "gofmt" },
 				rust = { "rustfmt" },
-				java = { "eclipse_formatter" },
+				java = { "astyle" },
 				c = { "clang_format" },
 				cpp = { "clang_format" },
 			},
@@ -47,14 +47,17 @@ return {
 					args = {
 						"--mode=java", -- language mode
 						"--indent=spaces=4", -- 4-space indentation
-						"--style=java", -- Java style (you can try other styles like google, kr, linux)
+						"--style=google", -- Java style (you can try other styles like google, kr, linux)
 						"--align-pointer=name", -- align pointers with variable names
-						"--pad-oper", -- pad operators with spaces
+						"--pad-oper",
 						"--pad-comma", -- pad commas with spaces
 						"--pad-header", -- pad control statements like `if (...)`
 						"--unpad-paren", -- remove unnecessary padding inside parentheses
 						"--suffix=none", -- prevent creating backup files like `.orig`
-						"--quiet", -- suppress output
+						"--quiet",
+						"--break-one-line-headers", -- suppress output
+						"--remove-braces",
+						"--remove-comment-prefix",
 					},
 					stdin = true,
 				},

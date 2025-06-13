@@ -32,7 +32,6 @@ local config = {
 		workspace_dir,
 	},
 	root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }),
-
 	settings = {
 		java = {
 			signatureHelp = { enabled = true },
@@ -55,12 +54,10 @@ local config = {
 				enabled = false,
 				-- settings = {
 				-- url = home .. "/.local/share/formatters/eclipse-java-style.xml",
-				-- organizeImports = false,
 				-- },
 			},
 		},
 	},
-
 	init_options = {
 		bundles = {},
 	},
