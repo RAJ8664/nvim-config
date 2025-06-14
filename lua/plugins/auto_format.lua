@@ -23,6 +23,7 @@ return {
 				java = { "astyle" },
 				c = { "clang_format" },
 				cpp = { "clang_format" },
+				sql = { "sql_formatter" }, -- Add SQL formatter
 			},
 			formatters = {
 				prettier = {

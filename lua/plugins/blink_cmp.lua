@@ -2,7 +2,12 @@ return {
 	{
 		"saghen/blink.cmp",
 		-- optional: provides snippets for the snippet source
-		dependencies = { "rafamadriz/friendly-snippets", "moyiz/blink-emoji.nvim", "huijiro/blink-cmp-supermaven" },
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			"moyiz/blink-emoji.nvim",
+			"huijiro/blink-cmp-supermaven",
+			"https://github.com/xzbdmw/colorful-menu.nvim",
+		},
 
 		-- use a release tag to download pre-built binaries
 		version = "1.*",
@@ -50,9 +55,29 @@ return {
 
 			-- (Default) Only show the documentation popup when manually triggered
 			completion = {
-				menu = { border = "rounded" },
+				accept = {
+					auto_brackets = {
+						enabled = true,
+					},
+				},
+				menu = {
+					draw = {
+						columns = {
+							{ "label", "label_description", gap = 1 },
+							{ "kind_icon", "kind", gap = 1 },
+						},
+					},
+					border = "rounded",
+				},
 				ghost_text = { enabled = true },
-				documentation = { auto_show = true, auto_show_delay = 500 },
+				documentation = {
+					window = {
+						border = "rounded",
+						winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
+					},
+					auto_show = true,
+					auto_show_delay = 500,
+				},
 			},
 			signature = { enabled = true, auto_show = true, auto_show_delay = 500 },
 			-- Default list of enabled providers defined so that you can extend it

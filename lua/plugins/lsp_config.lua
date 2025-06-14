@@ -286,6 +286,14 @@ return {
 						"html",
 					},
 				},
+				sqls = {
+					connections = {
+						{
+							driver = "mysql",
+							dataSourceName = "root:Rajroy@@roy123@tcp(127.0.0.1:3306)/practice",
+						},
+					},
+				},
 			}
 			-- Ensure the servers and tools above are installed
 			--

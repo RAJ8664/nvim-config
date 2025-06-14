@@ -24,7 +24,7 @@ return {
 				gemini = {
 					endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent",
 					model = "gemini-1.5-flash-latest",
-					api_key = "AIzaSyCIEFNrYtIeJsmA64ombMWqZc1Y-GRR44c",
+					api_key = "", --> your api max_completion_tokens,
 					headers = {
 						["Content-Type"] = "application/json",
 					},
