@@ -10,6 +10,11 @@ vim.keymap.set("n", "<C-s>", "<cmd> w <CR>", opts)
 --undo
 vim.keymap.set("i", "<C-z>", "<C-o>u", { noremap = true, silent = true })
 
+--view diagnostics;
+vim.keymap.set("n", "gl", function()
+	vim.diagnostic.open_float()
+end, { desc = "View diagnostics for the current line" })
+
 --select all in normal mode;
 vim.keymap.set("n", "<C-a>", "gg<S-v>G", { noremap = true, silent = true })
 

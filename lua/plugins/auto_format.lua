@@ -26,7 +26,15 @@ return {
 			},
 			formatters = {
 				prettier = {
-					prepend_args = { "--tab-width=4" },
+					prepend_args = {
+						"--tab-width=4",
+						"--single-quote",
+						"--trailing-comma=all",
+						"--use-tabs",
+						"--semi=false",
+						"--trailing-comma=all",
+						"--print-width=100",
+					},
 				},
 				eclipse_formatter = {
 					command = "java",
@@ -63,7 +71,6 @@ return {
 				},
 			},
 		})
-
 		-- Optional: keymap to format manually
 		vim.keymap.set({ "n", "v" }, "<leader>f", function()
 			require("conform").format({ async = true, lsp_fallback = true })
