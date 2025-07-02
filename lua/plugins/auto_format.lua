@@ -10,8 +10,8 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "black" },
-				javascript = { "prettier" },
-				typescript = { "prettier" },
+				javascript = { "biome-check" },
+				typescript = { "biome-check" },
 				html = { "prettier" },
 				css = { "prettier" },
 				json = { "prettier" },
@@ -24,6 +24,7 @@ return {
 				c = { "clang_format" },
 				cpp = { "clang_format" },
 				sql = { "sql_formatter" }, -- Add SQL formatter
+				php = { "phpcbf" },
 			},
 			formatters = {
 				prettier = {

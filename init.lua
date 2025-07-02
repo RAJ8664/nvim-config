@@ -42,9 +42,12 @@ require("lazy").setup({
 	require("plugins.lsp_config"),
 	require("plugins.comment_box"),
 	require("plugins.code_companion"),
-	require("plugins.github_copilot"),
+	--	require("plugins.github_copilot"),
 	require("plugins.avante_ai"),
 	require("plugins.blink_cmp"),
+	--require("plugins.image"),
+	require("plugins.folding"),
+	require("plugins.markdown"),
 
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the

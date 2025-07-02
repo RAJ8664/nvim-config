@@ -2,21 +2,80 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
+		local colors = require("tokyonight.colors").setup()
+
+		local function clock()
+			return os.date(" %H:%M")
+		end
+
+		local function os_icon()
+			local os_name = vim.loop.os_uname().sysname
+			if os_name == "Linux" then
+				return " Fedora"
+			elseif os_name == "Darwin" then
+				return " macOS"
+			elseif os_name == "Windows_NT" then
+				return " Windows"
+			else
+				return os_name
+			end
+		end
+
+		local function single_lsp_status()
+			local clients = vim.lsp.get_active_clients()
+			if next(clients) == nil then
+				return "" -- no LSP client attached
+			end
+			-- return the name of the first client
+			return " " .. clients[1].name
+		end
+
 		require("lualine").setup({
 			options = {
+				icons_enable = true,
 				section_separators = { left = "", right = "" },
-				component_separators = { left = "│", right = "│" },
-				theme = "dracula",
+				component_separators = { left = "", right = "" },
+				theme = "tokyonight",
 			},
 			sections = {
-				lualine_a = { "mode" },
-				lualine_b = { "branch", "diff", "diagnostics" },
+				lualine_a = { { "mode", separator = { left = "" }, right_padding = 1 } },
+				lualine_b = {
+					{
+						"branch",
+						icon = "",
+						color = { fg = colors.fg, bg = colors.bg, gui = "bold" },
+					},
+					{
+						"diff",
+						symbols = { added = " ", modified = " ", removed = " " },
+						diff_color = {
+							added = { fg = colors.green },
+							modified = { fg = colors.orange },
+							removed = { fg = colors.red },
+						},
+						-- cond = conditions.hide_in_width,
+					},
+					{
+						"diagnostics",
+						sources = { "nvim_diagnostic" },
+						symbols = { error = " ", warn = " ", info = " " },
+						diagnostics_color = {
+							color_error = { fg = colors.red },
+							color_warn = { fg = colors.yellow },
+							color_info = { fg = colors.cyan },
+						},
+					},
+				},
 				lualine_c = { "filename" },
-				lualine_x = { "encoding", "fileformat", "filetype" },
+				lualine_x = { "encoding", "fileformat", "filetype", single_lsp_status },
 				lualine_y = { "progress" },
-				lualine_z = { "location" },
+				lualine_z = {
+					clock,
+					os_icon,
+					{ "location", separator = { right = "" }, left_padding = 1 },
+					right_circle,
+				},
 			},
 		})
 	end,
 }
-

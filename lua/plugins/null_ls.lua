@@ -7,22 +7,22 @@ return {
 			return
 		end
 
-		-- local formatting = null_ls.builtins.formatting
-		-- -- local diagnostics = null_ls.builtins.diagnostics -- Uncomment if you need diagnostics
-		-- null_ls.setup({
-		-- 	debug = false,
-		-- 	sources = {
-		-- 		formatting.prettier.with({
-		-- 			extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-		-- 		}),
-		-- 		formatting.black.with({ extra_args = { "--fast" } }),
-		-- 		formatting.stylua,
-		-- 		formatting.sql_formatter.with({
-		-- 			filetypes = { "sql" },
-		-- 			command = "sql-formatter", -- optional if on $PATH
-		-- 		}),
-		-- 		-- diagnostics.flake8, -- Uncomment to enable
-		-- 	},
-		-- })
+		local formatting = null_ls.builtins.formatting
+		-- local diagnostics = null_ls.builtins.diagnostics -- Uncomment if you need diagnostics
+		null_ls.setup({
+			debug = false,
+			sources = {
+				formatting.prettier.with({
+					extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+				}),
+				formatting.black.with({ extra_args = { "--fast" } }),
+				formatting.stylua,
+				formatting.sql_formatter.with({
+					filetypes = { "sql" },
+					command = "sql-formatter", -- optional if on $PATH
+				}),
+				-- diagnostics.flake8, -- Uncomment to enable
+			},
+		})
 	end,
 }

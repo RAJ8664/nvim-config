@@ -237,6 +237,10 @@ return {
 						},
 					},
 				},
+				phpactor = {},
+				ast_grep = {
+					filetypes = { "javascript" },
+				},
 				eslint = {
 					settings = { workingDirectories = { mode = "auto" } },
 					filetypes = {
