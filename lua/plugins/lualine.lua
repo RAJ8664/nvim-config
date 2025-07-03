@@ -11,7 +11,7 @@ return {
 		local function os_icon()
 			local os_name = vim.loop.os_uname().sysname
 			if os_name == "Linux" then
-				return " Fedora"
+				return "󰣛 Linux"
 			elseif os_name == "Darwin" then
 				return " macOS"
 			elseif os_name == "Windows_NT" then
@@ -38,11 +38,19 @@ return {
 				theme = "tokyonight",
 			},
 			sections = {
-				lualine_a = { { "mode", separator = { left = "" }, right_padding = 1 } },
+				lualine_a = {
+					{
+						"mode",
+						icon = " ",
+						color = { gui = "bold" },
+						separator = { left = "" },
+						right_padding = 1,
+					},
+				},
 				lualine_b = {
 					{
 						"branch",
-						icon = "",
+						icon = "",
 						color = { fg = colors.fg, bg = colors.bg, gui = "bold" },
 					},
 					{
@@ -65,14 +73,20 @@ return {
 							color_info = { fg = colors.cyan },
 						},
 					},
+					{ "filename", icon = "" },
 				},
-				lualine_c = { "filename" },
+				lualine_c = { { "%=  Host : RkRoy  ", color = { fg = colors.red, gui = "bold" } } },
 				lualine_x = { "encoding", "fileformat", "filetype", single_lsp_status },
 				lualine_y = { "progress" },
 				lualine_z = {
-					clock,
-					os_icon,
-					{ "location", separator = { right = "" }, left_padding = 1 },
+					{ clock, color = { gui = "bold" } },
+					{ os_icon, color = { gui = "bold" } },
+					{
+						"location",
+						color = { fg = colors.black, gui = "bold" },
+						separator = { right = "" },
+						left_padding = 1,
+					},
 					right_circle,
 				},
 			},

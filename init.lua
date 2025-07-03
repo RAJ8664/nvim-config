@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	require("plugins.NeoTree"),
 	require("plugins.auto_pairs"),
-	require("plugins.Bufferline"),
+	-- require("plugins.Bufferline"),
 	require("plugins.git_signs"),
 	require("plugins.which_key"),
 	require("plugins.my_terminal"),
@@ -48,6 +48,9 @@ require("lazy").setup({
 	--require("plugins.image"),
 	require("plugins.folding"),
 	require("plugins.markdown"),
+	-- require("plugins.smoothScroll"),
+	require("plugins.MenuUI"),
+	require("plugins.dropBar"),
 
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the

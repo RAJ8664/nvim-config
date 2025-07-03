@@ -54,6 +54,7 @@ return {
 			},
 
 			-- (Default) Only show the documentation popup when manually triggered
+
 			completion = {
 				accept = {
 					auto_brackets = {
@@ -63,7 +64,7 @@ return {
 				menu = {
 					draw = {
 						columns = {
-							{ "label", "label_description", gap = 1 },
+							{ "label", "label_description", "source_name", gap = 1 },
 							{ "kind_icon", "kind", gap = 1 },
 						},
 					},
