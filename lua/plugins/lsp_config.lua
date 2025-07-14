@@ -274,6 +274,12 @@ return {
 						"html",
 					},
 				},
+				-- rust = {
+				-- 	filetypes = {
+				-- 		"rust",
+				-- 		"rust.rust-analyzer",
+				-- 	},
+				-- },
 				graphql = {
 					filetypes = {
 						"graphql",

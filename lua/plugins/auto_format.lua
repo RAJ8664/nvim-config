@@ -25,6 +25,7 @@ return {
 				cpp = { "clang_format" },
 				sql = { "sql_formatter" }, -- Add SQL formatter
 				php = { "phpcbf" },
+				rust = { "rustfmt" },
 			},
 			formatters = {
 				prettier = {

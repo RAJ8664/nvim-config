@@ -50,7 +50,10 @@ require("lazy").setup({
 	require("plugins.markdown"),
 	-- require("plugins.smoothScroll"),
 	require("plugins.MenuUI"),
+	require("plugins.typing"),
 	require("plugins.dropBar"),
+	-- require("plugins.Gemini-Cli"),
+	-- require("plugins.dashboard"),
 
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
