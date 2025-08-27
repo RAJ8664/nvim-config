@@ -207,7 +207,23 @@ return {
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
 				clangd = {},
-				marksman = {},
+				angularls = {},
+				marksman = {
+					handlers = {
+						["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
+							if result.diagnostics ~= nil then
+								local filtered = {}
+								for _, diag in ipairs(result.diagnostics) do
+									if diag.severity ~= vim.diagnostic.severity.WARN then
+										table.insert(filtered, diag)
+									end
+								end
+								result.diagnostics = filtered
+							end
+							vim.lsp.handlers["textDocument/publishDiagnostics"](_, result, ctx, config)
+						end,
+					},
+				},
 				-- gopls = {},
 				-- pyright = {},
 				-- rust_analyzer = {},
@@ -253,6 +269,14 @@ return {
 					},
 				},
 				ts_ls = {
+					root_dir = function(fname)
+						local angular_root = require("lspconfig").util.root_pattern("angular.json")(fname)
+						if angular_root then
+							return nil -- disable ts_ls in angular projects
+						end
+						-- fallback to default for other ts projects
+						return require("lspconfig").util.root_pattern("package.json", "tsconfig.json")(fname)
+					end,
 					filetypes = {
 						"javascript",
 						"javascriptreact",

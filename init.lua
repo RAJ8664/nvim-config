@@ -1,5 +1,6 @@
 require("core.keymaps")
 require("core.options")
+
 vim.opt.list = false
 
 -- plugin manager for Neovim
@@ -52,8 +53,15 @@ require("lazy").setup({
 	require("plugins.MenuUI"),
 	require("plugins.typing"),
 	require("plugins.dropBar"),
-	-- require("plugins.Gemini-Cli"),
+	require("plugins.Gemini-Cli"),
 	-- require("plugins.dashboard"),
+	require("plugins.minty"),
+	require("plugins.bg"),
+	require("plugins.vimtex"),
+	-- require("plugins.indent_line"),
+	require("plugins.wakatime"),
+	require("plugins.zoxide"),
+	require("plugins.spotify"),
 
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
