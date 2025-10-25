@@ -2,6 +2,24 @@ require("core.keymaps")
 require("core.options")
 
 vim.opt.list = false
+vim.opt.signcolumn = "yes"
+
+vim.cmd([[
+  highlight! DiagnosticLineNrError guifg=#ff0000 gui=bold
+  highlight! DiagnosticLineNrWarn guifg=#ffaa00 gui=bold
+  highlight! DiagnosticLineNrInfo guifg=#00aaff gui=bold
+  highlight! DiagnosticLineNrHint guifg=#00ff00 gui=bold
+]])
+
+for type, hl in pairs({
+	Error = "DiagnosticLineNrError",
+	Warn = "DiagnosticLineNrWarn",
+	Info = "DiagnosticLineNrInfo",
+	Hint = "DiagnosticLineNrHint",
+}) do
+	local sign = "DiagnosticSign" .. type
+	vim.fn.sign_define(sign, { numhl = hl })
+end
 
 -- plugin manager for Neovim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -52,7 +70,7 @@ require("lazy").setup({
 	-- require("plugins.smoothScroll"),
 	require("plugins.MenuUI"),
 	require("plugins.typing"),
-	require("plugins.dropBar"),
+	-- require("plugins.dropBar"),
 	require("plugins.Gemini-Cli"),
 	-- require("plugins.dashboard"),
 	require("plugins.minty"),
@@ -62,6 +80,9 @@ require("lazy").setup({
 	require("plugins.wakatime"),
 	require("plugins.zoxide"),
 	require("plugins.spotify"),
+	-- require("plugins.lsp_lens"),
+	require("plugins.ThemeHub"),
+	require("plugins.topbar"),
 
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
