@@ -239,6 +239,18 @@ return {
 						"java",
 					},
 				},
+				mdx_analyzer = {
+					filetypes = { "mdx" },
+					settings = {
+						mdx = {
+							validate = true,
+							-- Enable JSX/TSX features in MDX
+							typescript = {
+								enabled = true,
+							},
+						},
+					},
+				},
 				lua_ls = {
 					-- cmd = { ... },
 					-- filetypes = { ... },

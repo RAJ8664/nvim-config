@@ -17,13 +17,13 @@
 
 ## 📸 Screenshots
 
-|                                                       |                                                       |
-| :---------------------------------------------------: | :---------------------------------------------------: |
-|                                                       |                                                       |
-| ![img](pictures/Screenshot_14-Jul_14-20-24_26034.png) | ![img](pictures/Screenshot_14-Jul_14-20-46_30010.png) |
-| ![img](pictures/Screenshot_14-Jul_14-21-01_2361.png)  | ![img](pictures/Screenshot_14-Jul_14-21-33_28692.png) |
-| ![img](pictures/Screenshot_14-Jul_14-21-50_1862.png)  | ![img](pictures/Screenshot_14-Jul_14-23-27_3904.png)  |
-|  ![img](pictures/Screenshot_14-Jul_14-33-34_299.png)  | ![img](pictures/Screenshot_14-Jul_15-06-27_23844.png) |
+|                                                                                                                   |                                                       |
+| :---------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------: |
+|                                                                                                                   |                                                       |
+| ![img](https://res.cloudinary.com/dzgoq3ikq/image/upload/v1761509001/Screenshot_27-Oct_01-31-28_11602_ru0ebv.png) | ![img](pictures/Screenshot_14-Jul_14-20-46_30010.png) |
+|                               ![img](pictures/Screenshot_14-Jul_14-21-01_2361.png)                                | ![img](pictures/Screenshot_14-Jul_14-21-33_28692.png) |
+|                               ![img](pictures/Screenshot_14-Jul_14-21-50_1862.png)                                | ![img](pictures/Screenshot_14-Jul_14-23-27_3904.png)  |
+|                                ![img](pictures/Screenshot_14-Jul_14-33-34_299.png)                                | ![img](pictures/Screenshot_14-Jul_15-06-27_23844.png) |
 
 ---
 
