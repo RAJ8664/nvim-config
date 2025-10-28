@@ -11,6 +11,11 @@ vim.g.have_nerd_font = true
 vim.opt.mouse = "a"
 vim.opt.showmode = false
 
+-- For Menus
+--
+vim.opt.mouse = "a"
+vim.opt.mousemodel = "popup_setpos"
+
 -- sync clipboard with OS and Neovim
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
