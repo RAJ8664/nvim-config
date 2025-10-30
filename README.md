@@ -72,9 +72,9 @@ This configuration is built around a set of powerful plugins:
 | Plugin                | Description                                        |
 | :-------------------- | :------------------------------------------------- |
 | **`lazy.nvim`**       | The plugin manager that powers this setup.         |
-| **`tokyonight.nvim`** | The primary color scheme.                          |
+| **`Kanagawa.nvim`**   | The primary color scheme.                          |
 | **`lualine.nvim`**    | A blazing fast and beautiful status line.          |
-| **`nvim-tree.lua`**   | A fast and feature-rich file explorer.             |
+| **`NeoTree.lua`**     | A fast and feature-rich file explorer.             |
 | **`bufferline.nvim`** | A sleek and functional buffer line.                |
 | **`which-key.nvim`**  | A popup that displays keybindings.                 |
 | **`telescope.nvim`**  | A highly extendable fuzzy finder.                  |
@@ -87,7 +87,7 @@ This configuration is built around a set of powerful plugins:
 | :------------------- | :--------------------------------------------------- |
 | **`nvim-lspconfig`** | The core LSP configuration plugin.                   |
 | **`mason.nvim`**     | To manage and install LSPs, linters, and formatters. |
-| **`nvim-cmp`**       | The completion engine.                               |
+| **`blink-cmp`**      | The completion engine.                               |
 | **`nvim-lint`**      | For asynchronous linting.                            |
 | **`gitsigns.nvim`**  | Git decorations and hunks in the sign column.        |
 | **`nvim-dap`**       | A Debug Adapter Protocol implementation.             |
