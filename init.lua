@@ -24,7 +24,7 @@ require("lazy").setup({
 	require("plugins.lualine"),
 	require("plugins.color_scheme"),
 	require("plugins.noise"),
-	require("plugins.debugger"),
+	-- require("plugins.debugger"),
 	require("plugins.linters"),
 	require("plugins.telescope"),
 	require("plugins.auto_format"),
