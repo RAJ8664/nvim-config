@@ -1,0 +1,308 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Quickstart - nvim-config">
+  <Header />
+  <main class="docs-page">
+    <div class="container">
+      <div class="docs-content">
+        <h1 class="page-title">Quickstart Guide</h1>
+        <p class="page-intro">Get up and running with nvim-config in minutes</p>
+
+        <section class="docs-section">
+          <h2>Prerequisites</h2>
+          <ul>
+            <li>Neovim >= 0.9.0</li>
+            <li>Git</li>
+            <li>A Nerd Font (optional but recommended)</li>
+            <li>ripgrep (for telescope grep)</li>
+          </ul>
+        </section>
+
+        <section class="docs-section">
+          <h2>Installation</h2>
+          <h3>Linux/MacOS</h3>
+          <div class="code-block">
+            <pre><code># Backup your existing config
+mv ~/.config/nvim ~/.config/nvim.bak
+
+# Clone the repository
+git clone https://github.com/raj8664/nvim-config.git ~/.config/nvim
+
+# Start Neovim
+nvim</code></pre>
+          </div>
+
+          <h3>Windows (PowerShell)</h3>
+          <div class="code-block">
+            <pre><code># Backup your existing config
+Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
+
+# Clone the repository
+git clone https://github.com/raj8664/nvim-config.git $env:LOCALAPPDATA\nvim
+
+# Start Neovim
+nvim</code></pre>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2>First Steps</h2>
+          <ol>
+            <li>
+              <strong>Automatic Plugin Installation:</strong>
+              <p>On first launch, lazy.nvim will automatically install all plugins. Wait for the installation to complete.</p>
+            </li>
+            <li>
+              <strong>Install Language Servers:</strong>
+              <div class="code-block">
+                <pre><code>:Mason</code></pre>
+              </div>
+              <p>Use Mason to install LSP servers for your languages (press 'i' to install)</p>
+            </li>
+            <li>
+              <strong>Install Treesitter Parsers:</strong>
+              <div class="code-block">
+                <pre><code>:TSInstall &lt;language&gt;</code></pre>
+              </div>
+              <p>Example: <code>:TSInstall lua python javascript</code></p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="docs-section">
+          <h2>Key Bindings</h2>
+          <p>Leader key is set to <code>&lt;Space&gt;</code></p>
+          
+          <h3>General</h3>
+          <ul class="keybinds-list">
+            <li><code>&lt;Space&gt; + ff</code> - Find files</li>
+            <li><code>&lt;Space&gt; + fg</code> - Live grep</li>
+            <li><code>&lt;Space&gt; + fb</code> - Browse buffers</li>
+            <li><code>&lt;Space&gt; + e</code> - Toggle file explorer</li>
+          </ul>
+
+          <h3>LSP</h3>
+          <ul class="keybinds-list">
+            <li><code>gd</code> - Go to definition</li>
+            <li><code>gr</code> - Go to references</li>
+            <li><code>K</code> - Hover documentation</li>
+            <li><code>&lt;Space&gt; + ca</code> - Code action</li>
+            <li><code>&lt;Space&gt; + rn</code> - Rename symbol</li>
+          </ul>
+        </section>
+
+        <section class="docs-section">
+          <h2>Customization</h2>
+          <p>You can customize the configuration by editing files in <code>~/.config/nvim/lua/</code></p>
+          <ul>
+            <li><code>lua/core/options.lua</code> - Vim options</li>
+            <li><code>lua/core/keymaps.lua</code> - Key mappings</li>
+            <li><code>lua/plugins/</code> - Plugin configurations</li>
+          </ul>
+        </section>
+
+        <section class="docs-section">
+          <h2>Updating</h2>
+          <p>To update plugins, use the following command inside Neovim:</p>
+          <div class="code-block">
+            <pre><code>:Lazy sync</code></pre>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2>Troubleshooting</h2>
+          <h3>Plugins not loading</h3>
+          <p>Try removing the plugin cache and reinstalling:</p>
+          <div class="code-block">
+            <pre><code>rm -rf ~/.local/share/nvim
+nvim</code></pre>
+          </div>
+
+          <h3>LSP not working</h3>
+          <p>Make sure you have installed the language server via Mason:</p>
+          <div class="code-block">
+            <pre><code>:Mason
+:LspInfo</code></pre>
+          </div>
+        </section>
+
+        <section class="docs-section cta-section">
+          <h2>Need Help?</h2>
+          <p>If you encounter any issues, please open an issue on GitHub.</p>
+          <a href="https://github.com/raj8664/nvim-config/issues" target="_blank" class="btn-primary">
+            Open an Issue
+          </a>
+        </section>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .docs-page {
+    padding: 6rem 2rem 4rem;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .docs-content {
+    background: var(--surface);
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 1px solid var(--surface-light);
+  }
+
+  .page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .page-intro {
+    font-size: 1.25rem;
+    color: var(--text-dim);
+    margin-bottom: 3rem;
+  }
+
+  .docs-section {
+    margin-bottom: 3rem;
+  }
+
+  .docs-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--surface-light);
+  }
+
+  .docs-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: var(--primary);
+  }
+
+  .docs-section p {
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .docs-section ul, .docs-section ol {
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .docs-section li {
+    margin-bottom: 0.5rem;
+  }
+
+  .code-block {
+    background: var(--background);
+    border: 1px solid var(--surface-light);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+  }
+
+  .code-block pre {
+    margin: 0;
+  }
+
+  .code-block code {
+    color: var(--text);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  code {
+    background: var(--background);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+    color: var(--primary);
+  }
+
+  .keybinds-list {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .keybinds-list li {
+    padding: 0.5rem 0;
+  }
+
+  .keybinds-list code {
+    display: inline-block;
+    min-width: 150px;
+    margin-right: 1rem;
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(122, 162, 247, 0.1);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(122, 162, 247, 0.3);
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: var(--primary);
+    color: var(--background);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .docs-page {
+      padding: 5rem 1rem 2rem;
+    }
+
+    .docs-content {
+      padding: 2rem 1.5rem;
+    }
+
+    .page-title {
+      font-size: 2rem;
+    }
+
+    .docs-section h2 {
+      font-size: 1.5rem;
+    }
+
+    .keybinds-list code {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>

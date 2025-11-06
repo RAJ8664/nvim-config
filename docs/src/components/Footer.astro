@@ -1,0 +1,126 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">
+          <span class="logo-icon">⚡</span>
+          nvim-config
+        </h3>
+        <p class="footer-description">
+          A blazing fast Neovim configuration for modern development.
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-heading">Resources</h4>
+        <ul class="footer-links">
+          <li><a href="/nvim-config/quickstart">Quickstart</a></li>
+          <li><a href="/nvim-config/features">Features</a></li>
+          <li><a href="https://github.com/raj8664/nvim-config" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-heading">Community</h4>
+        <ul class="footer-links">
+          <li><a href="https://neovim.io" target="_blank">Neovim</a></li>
+          <li><a href="https://github.com/neovim/neovim/discussions" target="_blank">Discussions</a></li>
+          <li><a href="https://www.reddit.com/r/neovim/" target="_blank">Reddit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© {currentYear} nvim-config. Built with Astro.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--surface);
+    border-top: 1px solid var(--surface-light);
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+
+  .footer-description {
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  .footer-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: var(--primary);
+  }
+
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid var(--surface-light);
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer {
+      padding: 3rem 1rem 1.5rem;
+    }
+  }
+</style>

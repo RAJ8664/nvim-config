@@ -1,0 +1,289 @@
+---
+const baseUrl = '/nvim-config';
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Lightning Fast Neovim Setup</div>
+    <h1 class="hero-title">
+      Your Perfect
+      <span class="gradient-text">Neovim</span>
+      Configuration
+    </h1>
+    <p class="hero-description">
+      A blazing fast, feature-rich Neovim configuration that transforms your editor into a powerful IDE. 
+      Built with performance and developer experience in mind.
+    </p>
+    <div class="hero-buttons">
+      <a href={baseUrl + '/quickstart'} class="btn btn-primary">
+        Get Started
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a href="https://github.com/raj8664/nvim-config" target="_blank" class="btn btn-secondary">
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-buttons">
+          <span class="btn-close"></span>
+          <span class="btn-minimize"></span>
+          <span class="btn-maximize"></span>
+        </div>
+        <div class="terminal-title">nvim init.lua</div>
+      </div>
+      <div class="terminal-body">
+        <pre><code>
+<span class="comment">-- Your nvim-config</span>
+<span class="keyword">local</span> <span class="variable">config</span> = &#123;
+  <span class="property">theme</span> = <span class="string">"tokyonight"</span>,
+  <span class="property">lsp</span> = <span class="boolean">true</span>,
+  <span class="property">treesitter</span> = <span class="boolean">true</span>,
+&#125;
+
+<span class="function">require</span>(<span class="string">"core"</span>).<span class="function">setup</span>(<span class="variable">config</span>)
+</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(122, 162, 247, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(187, 154, 247, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(122, 162, 247, 0.1);
+    border: 1px solid rgba(122, 162, 247, 0.3);
+    border-radius: 2rem;
+    color: var(--primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: var(--background);
+    box-shadow: 0 4px 14px rgba(122, 162, 247, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(122, 162, 247, 0.4);
+  }
+
+  .btn-secondary {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--surface-light);
+  }
+
+  .btn-secondary:hover {
+    background: var(--surface-light);
+    transform: translateY(-2px);
+  }
+
+  .hero-visual {
+    position: relative;
+  }
+
+  .terminal-window {
+    background: var(--surface);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--surface-light);
+  }
+
+  .terminal-header {
+    background: rgba(36, 40, 59, 0.8);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--surface-light);
+  }
+
+  .terminal-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .terminal-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .btn-close {
+    background: #ff5f56;
+  }
+
+  .btn-minimize {
+    background: #ffbd2e;
+  }
+
+  .btn-maximize {
+    background: #27c93f;
+  }
+
+  .terminal-title {
+    color: var(--text-dim);
+    font-size: 0.875rem;
+  }
+
+  .terminal-body {
+    padding: 1.5rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .terminal-body code {
+    color: var(--text);
+  }
+
+  .comment {
+    color: #565f89;
+  }
+
+  .keyword {
+    color: var(--secondary);
+  }
+
+  .variable {
+    color: var(--text);
+  }
+
+  .property {
+    color: var(--accent);
+  }
+
+  .string {
+    color: var(--success);
+  }
+
+  .boolean {
+    color: var(--warning);
+  }
+
+  .function {
+    color: var(--primary);
+  }
+
+  @media (max-width: 968px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+    }
+
+    .hero-visual {
+      order: -1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+    }
+
+    .btn {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+</style>

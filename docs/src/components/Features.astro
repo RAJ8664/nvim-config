@@ -1,0 +1,152 @@
+---
+const features = [
+  {
+    icon: '⚡',
+    title: 'Lightning Fast',
+    description: 'Optimized startup time with lazy loading. Open Neovim and start coding instantly.',
+  },
+  {
+    icon: '🎨',
+    title: 'Beautiful UI',
+    description: 'Carefully crafted color schemes and statusline. A pleasure to look at and work with.',
+  },
+  {
+    icon: '🔧',
+    title: 'LSP Support',
+    description: 'Built-in Language Server Protocol support for intelligent code completion and diagnostics.',
+  },
+  {
+    icon: '🌳',
+    title: 'Treesitter',
+    description: 'Advanced syntax highlighting and code understanding powered by Tree-sitter.',
+  },
+  {
+    icon: '🔍',
+    title: 'Fuzzy Finding',
+    description: 'Quickly find files, buffers, and text with Telescope integration.',
+  },
+  {
+    icon: '📦',
+    title: 'Plugin Manager',
+    description: 'Easy plugin management with lazy.nvim. Install and update with simple commands.',
+  },
+  {
+    icon: '⌨️',
+    title: 'Smart Keybindings',
+    description: 'Intuitive keybindings that make sense. Vim motions enhanced for productivity.',
+  },
+  {
+    icon: '🎯',
+    title: 'Git Integration',
+    description: 'Built-in git signs and commands. See changes and manage git without leaving the editor.',
+  },
+  {
+    icon: '🚀',
+    title: 'Easy Setup',
+    description: 'One command installation. Get up and running in seconds with sensible defaults.',
+  },
+];
+---
+
+<section class="features">
+  <div class="container">
+    <div class="features-header">
+      <h2 class="section-title">Why Choose This Config?</h2>
+      <p class="section-description">
+        Everything you need for modern development, pre-configured and ready to use
+      </p>
+    </div>
+    <div class="features-grid">
+      {features.map((feature) => (
+        <div class="feature-card">
+          <div class="feature-icon">{feature.icon}</div>
+          <h3 class="feature-title">{feature.title}</h3>
+          <p class="feature-description">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, var(--background) 0%, rgba(36, 40, 59, 0.3) 100%);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .features-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--text) 0%, var(--text-dim) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-description {
+    font-size: 1.25rem;
+    color: var(--text-dim);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--surface-light);
+    transition: all 0.3s;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(122, 162, 247, 0.2);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .feature-description {
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .features {
+      padding: 4rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,282 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Features - nvim-config">
+  <Header />
+  <main class="features-page">
+    <div class="container">
+      <h1 class="page-title">Features</h1>
+      <p class="page-intro">Discover what makes this configuration powerful and efficient</p>
+
+      <div class="feature-detailed">
+        <div class="feature-icon-large">⚡</div>
+        <h2>Blazing Fast Performance</h2>
+        <p>Experience lightning-fast startup times thanks to lazy loading of plugins. The configuration is optimized to load only what you need, when you need it. Average startup time is under 50ms.</p>
+        <ul>
+          <li>Lazy plugin loading with lazy.nvim</li>
+          <li>Optimized for minimal resource usage</li>
+          <li>Fast file opening and buffer switching</li>
+        </ul>
+      </div>
+
+      <div class="feature-detailed">
+        <div class="feature-icon-large">🔧</div>
+        <h2>Complete LSP Integration</h2>
+        <p>Built-in Language Server Protocol support gives you IDE-like features right in your terminal. Get intelligent code completion, inline diagnostics, and powerful refactoring tools.</p>
+        <ul>
+          <li>Auto-completion with nvim-cmp</li>
+          <li>Inline diagnostics and error highlighting</li>
+          <li>Go to definition, references, and implementations</li>
+          <li>Code actions and quick fixes</li>
+          <li>Symbol renaming across your project</li>
+          <li>Easy LSP server management with Mason</li>
+        </ul>
+      </div>
+
+      <div class="feature-detailed">
+        <div class="feature-icon-large">🌳</div>
+        <h2>Advanced Syntax Highlighting</h2>
+        <p>Tree-sitter provides accurate, fast syntax highlighting and enables powerful code understanding features. Better syntax awareness means better tooling.</p>
+        <ul>
+          <li>Context-aware syntax highlighting</li>
+          <li>Incremental parsing for performance</li>
+          <li>Better code folding</li>
+          <li>Intelligent text objects</li>
+        </ul>
+      </div>
+
+      <div class="feature-detailed">
+        <div class="feature-icon-large">🔍</div>
+        <h2>Powerful Fuzzy Finding</h2>
+        <p>Telescope integration makes finding files, text, and symbols incredibly fast. Navigate your codebase with ease using fuzzy search across files, buffers, git files, and more.</p>
+        <ul>
+          <li>Fuzzy file finder</li>
+          <li>Live grep with preview</li>
+          <li>Buffer and oldfiles navigation</li>
+          <li>Git integration (commits, branches, status)</li>
+          <li>LSP symbol search</li>
+        </ul>
+      </div>
+
+      <div class="feature-detailed">
+        <div class="feature-icon-large">🎨</div>
+        <h2>Beautiful User Interface</h2>
+        <p>A carefully crafted interface that's both beautiful and functional. The Tokyo Night theme provides excellent contrast while being easy on the eyes during long coding sessions.</p>
+        <ul>
+          <li>Tokyo Night color scheme</li>
+          <li>Custom statusline with lualine</li>
+          <li>Git signs in the gutter</li>
+          <li>Smooth scrolling animations</li>
+          <li>Indent guides for better readability</li>
+        </ul>
+      </div>
+
+      <div class="feature-detailed">
+        <div class="feature-icon-large">🎯</div>
+        <h2>Git Integration</h2>
+        <p>Work seamlessly with Git without leaving your editor. See changes in real-time, stage hunks, and manage your git workflow efficiently.</p>
+        <ul>
+          <li>Git signs showing changes in real-time</li>
+          <li>Blame information inline</li>
+          <li>Stage and unstage hunks</li>
+          <li>Git integration in Telescope</li>
+          <li>Diff view for comparing changes</li>
+        </ul>
+      </div>
+
+      <div class="feature-detailed">
+        <div class="feature-icon-large">📁</div>
+        <h2>File Explorer</h2>
+        <p>nvim-tree provides a fast, intuitive file explorer with git integration. Manage your project structure efficiently with keyboard-driven navigation.</p>
+        <ul>
+          <li>Tree-style file explorer</li>
+          <li>Git status indicators</li>
+          <li>File operations (create, delete, rename, move)</li>
+          <li>Bookmarks for quick access</li>
+          <li>Custom file icons</li>
+        </ul>
+      </div>
+
+      <div class="feature-detailed">
+        <div class="feature-icon-large">⌨️</div>
+        <h2>Intuitive Keybindings</h2>
+        <p>Well-thought-out keybindings that follow Vim conventions while adding modern conveniences. All major functions are easily accessible with logical key combinations.</p>
+        <ul>
+          <li>Space as leader key</li>
+          <li>Which-key integration for discoverability</li>
+          <li>Consistent naming conventions</li>
+          <li>Easy to customize and extend</li>
+        </ul>
+      </div>
+
+      <div class="feature-detailed">
+        <div class="feature-icon-large">🚀</div>
+        <h2>Easy Installation & Updates</h2>
+        <p>Get started in seconds with a single command. Updating is just as simple, ensuring you always have the latest features and bug fixes.</p>
+        <ul>
+          <li>One-command installation</li>
+          <li>Automatic plugin installation on first launch</li>
+          <li>Simple update process with :Lazy sync</li>
+          <li>No complex dependencies</li>
+        </ul>
+      </div>
+
+      <div class="cta-box">
+        <h2>Ready to Get Started?</h2>
+        <p>Install nvim-config and transform your Neovim experience today.</p>
+        <a href="/nvim-config/quickstart" class="btn-cta">View Quickstart Guide</a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .features-page {
+    padding: 6rem 2rem 4rem;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .page-intro {
+    font-size: 1.25rem;
+    color: var(--text-dim);
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .feature-detailed {
+    background: var(--surface);
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 1px solid var(--surface-light);
+    margin-bottom: 2rem;
+    transition: all 0.3s;
+  }
+
+  .feature-detailed:hover {
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(122, 162, 247, 0.15);
+  }
+
+  .feature-icon-large {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-detailed h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .feature-detailed p {
+    color: var(--text-dim);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .feature-detailed ul {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .feature-detailed li {
+    color: var(--text-dim);
+    line-height: 1.8;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .feature-detailed li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, rgba(122, 162, 247, 0.1) 0%, rgba(187, 154, 247, 0.1) 100%);
+    border: 2px solid var(--primary);
+    border-radius: 1rem;
+    padding: 3rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .cta-box h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .cta-box p {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-cta {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary);
+    color: var(--background);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 14px rgba(122, 162, 247, 0.3);
+  }
+
+  .btn-cta:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(122, 162, 247, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .features-page {
+      padding: 5rem 1rem 2rem;
+    }
+
+    .page-title {
+      font-size: 2rem;
+    }
+
+    .feature-detailed {
+      padding: 2rem 1.5rem;
+    }
+
+    .feature-detailed h2 {
+      font-size: 1.5rem;
+    }
+
+    .cta-box {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
