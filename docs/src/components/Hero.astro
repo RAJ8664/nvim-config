@@ -4,66 +4,93 @@ const baseUrl = '/nvim-config';
 
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-badge">Lightning Fast Neovim Setup</div>
-    <h1 class="hero-title">
-      Your Perfect
-      <span class="gradient-text">Neovim</span>
-      Configuration
-    </h1>
-    <p class="hero-description">
-      A blazing fast, feature-rich Neovim configuration that transforms your editor into a powerful IDE. 
-      Built with performance and developer experience in mind.
-    </p>
-    <div class="hero-buttons">
-      <a href={baseUrl + '/quickstart'} class="btn btn-primary">
-        Get Started
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
-      <a href="https://github.com/raj8664/nvim-config" target="_blank" class="btn btn-secondary">
-        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-        </svg>
-        View on GitHub
-      </a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="terminal-window">
-      <div class="terminal-header">
-        <div class="terminal-buttons">
-          <span class="btn-close"></span>
-          <span class="btn-minimize"></span>
-          <span class="btn-maximize"></span>
-        </div>
-        <div class="terminal-title">nvim init.lua</div>
+    <div class="hero-text">
+      <div class="hero-badge">Lightning Fast Neovim Setup</div>
+      <h1 class="hero-title">
+        Your Perfect
+        <span>Neovim</span>
+        Configuration
+      </h1>
+      <p class="hero-description">
+        A blazing fast, feature-rich Neovim configuration that transforms your editor into a powerful IDE. 
+        Built with performance and developer experience in mind.
+      </p>
+      <div class="hero-buttons">
+        <a href={baseUrl + '/quickstart'} class="btn btn-primary">
+          Get Started
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="https://github.com/raj8664/nvim-config" target="_blank" class="btn btn-secondary">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          View on GitHub
+        </a>
       </div>
-      <div class="terminal-body">
-        <pre><code>
-<span class="comment">-- Your nvim-config</span>
-<span class="keyword">local</span> <span class="variable">config</span> = &#123;
-  <span class="property">theme</span> = <span class="string">"tokyonight"</span>,
-  <span class="property">lsp</span> = <span class="boolean">true</span>,
-  <span class="property">treesitter</span> = <span class="boolean">true</span>,
-&#125;
+    </div>
 
-<span class="function">require</span>(<span class="string">"core"</span>).<span class="function">setup</span>(<span class="variable">config</span>)
-</code></pre>
+    <!-- Hero Carousel -->
+    <div class="hero-carousel">
+      <div class="carousel-wrapper-hero">
+        <div class="carousel-track-hero" id="heroCarouselTrack">
+          <div class="carousel-slide-hero">
+            <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1761659282/Screenshot_29-Oct_00-44-36_22035_r58cjo.png" alt="Neovim Screenshot 1" class="carousel-image-hero" />
+          </div>
+          <div class="carousel-slide-hero">
+            <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1763200073/Screenshot_15-Nov_14-35-54_3740_xo7wxh.png" alt="Neovim Screenshot 2" class="carousel-image-hero" />
+          </div>
+          <div class="carousel-slide-hero">
+            <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1763200071/Screenshot_15-Nov_14-37-06_6408_rwj5l7.png" alt="Neovim Screenshot 3" class="carousel-image-hero" />
+          </div>
+          <div class="carousel-slide-hero">
+            <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1763200070/Screenshot_15-Nov_14-39-25_21943_gg9o2o.png" alt="Neovim Screenshot 4" class="carousel-image-hero" />
+          </div>
+          <div class="carousel-slide-hero">
+            <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1763200070/Screenshot_15-Nov_14-41-29_3208_nmx481.png" alt="Neovim Screenshot 5" class="carousel-image-hero" />
+          </div>
+          <div class="carousel-slide-hero">
+            <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1763200073/Screenshot_15-Nov_14-36-33_11095_px4enw.png" alt="Neovim Screenshot 6" class="carousel-image-hero" />
+          </div>
+          <div class="carousel-slide-hero">
+            <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1763200070/Screenshot_15-Nov_14-42-00_11230_zvjtp8.png" alt="Neovim Screenshot 7" class="carousel-image-hero" />
+          </div>
+        </div>
+        
+        <!-- Carousel Navigation Dots -->
+        <div class="carousel-dots-hero" id="heroCarouselDots"></div>
+
+        <!-- Control Buttons -->
+        <button class="carousel-btn-hero carousel-btn-prev" id="heroPrevBtn" aria-label="Previous slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="carousel-btn-hero carousel-btn-next" id="heroNextBtn" aria-label="Next slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+
+        <!-- Slide Counter -->
+        <div class="carousel-counter-hero" id="heroCounter">1 / 7</div>
       </div>
     </div>
   </div>
 </section>
 
 <style>
+  /* Hero Section */
   .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6rem 2rem 4rem;
+    padding: 2rem;
     position: relative;
     overflow: hidden;
+    background: var(--ctp-base);
   }
 
   .hero::before {
@@ -74,53 +101,99 @@ const baseUrl = '/nvim-config';
     right: 0;
     bottom: 0;
     background: 
-      radial-gradient(circle at 20% 50%, rgba(122, 162, 247, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(187, 154, 247, 0.1) 0%, transparent 50%);
+      radial-gradient(circle at 20% 50%, rgba(203, 166, 247, 0.2) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(180, 190, 254, 0.2) 0%, transparent 40%),
+      radial-gradient(circle at 40% 20%, rgba(245, 194, 231, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 60% 70%, rgba(148, 226, 213, 0.15) 0%, transparent 40%);
     pointer-events: none;
+    z-index: 0;
+    animation: backgroundPulse 8s ease-in-out infinite;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(45deg, transparent 30%, rgba(203, 166, 247, 0.03) 50%, transparent 70%);
+    background-size: 200% 200%;
+    animation: gradientMove 15s ease infinite;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .hero-content {
-    max-width: 1200px;
+    max-width: 100%;
     width: 100%;
+    height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 450px 1fr;
+    gap: 2rem;
     align-items: center;
     position: relative;
     z-index: 1;
+    padding: 0;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem 2rem 4rem;
+    height: 100%;
+    justify-content: center;
   }
 
   .hero-badge {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    background: rgba(122, 162, 247, 0.1);
-    border: 1px solid rgba(122, 162, 247, 0.3);
+    padding: 0.6rem 1.25rem;
+    background: linear-gradient(135deg, rgba(203, 166, 247, 0.15), rgba(180, 190, 254, 0.15));
+    border: 1px solid rgba(203, 166, 247, 0.4);
     border-radius: 2rem;
-    color: var(--primary);
+    color: var(--ctp-mauve);
     font-size: 0.875rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    width: fit-content;
+    box-shadow: 0 4px 15px rgba(203, 166, 247, 0.1);
+  }
+
+  .hero-badge:hover {
+    background: linear-gradient(135deg, rgba(203, 166, 247, 0.25), rgba(180, 190, 254, 0.25));
+    border-color: rgba(203, 166, 247, 0.6);
+    box-shadow: 0 6px 20px rgba(203, 166, 247, 0.3);
+    transform: translateY(-2px) scale(1.02);
   }
 
   .hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.8rem;
+    font-weight: 900;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
+    color: var(--ctp-text);
+    text-shadow: 0 0 40px rgba(203, 166, 247, 0.2);
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: linear-gradient(45deg, var(--ctp-mauve), var(--ctp-pink), var(--ctp-sky), var(--ctp-teal));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    background-size: 300% auto;
+    animation: gradientFlow 4s ease infinite;
+    filter: drop-shadow(0 0 20px rgba(203, 166, 247, 0.3));
   }
 
   .hero-description {
     font-size: 1.25rem;
-    color: var(--text-dim);
-    margin-bottom: 2rem;
+    color: var(--ctp-subtext1);
+    margin-bottom: 2.5rem;
     line-height: 1.8;
   }
 
@@ -134,147 +207,420 @@ const baseUrl = '/nvim-config';
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.875rem 1.75rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 700;
     text-decoration: none;
-    transition: all 0.3s;
-    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-size: 1.05rem;
+    position: relative;
+    overflow: hidden;
   }
 
   .btn-primary {
-    background: var(--primary);
-    color: var(--background);
-    box-shadow: 0 4px 14px rgba(122, 162, 247, 0.3);
+    background: linear-gradient(135deg, var(--ctp-mauve), var(--ctp-lavender));
+    color: var(--ctp-crust);
+    box-shadow: 0 4px 15px rgba(203, 166, 247, 0.3);
+    border: none;
+    z-index: 1;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(
+      -45deg,
+      transparent 0%,
+      transparent 35%,
+      rgba(255, 255, 255, 0.1) 45%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0.1) 55%,
+      transparent 65%,
+      transparent 100%
+    );
+    filter: blur(1px);
+    animation: diagonalShine 3s linear infinite;
+    z-index: 1;
   }
 
   .btn-primary:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(122, 162, 247, 0.4);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(203, 166, 247, 0.5);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0) scale(0.98);
   }
 
   .btn-secondary {
-    background: var(--surface);
-    color: var(--text);
-    border: 1px solid var(--surface-light);
+    background: var(--ctp-surface0);
+    color: var(--ctp-lavender);
+    border: 1px solid var(--ctp-lavender);
+    box-shadow: 0 4px 15px rgba(180, 190, 254, 0.2);
   }
 
   .btn-secondary:hover {
-    background: var(--surface-light);
-    transform: translateY(-2px);
+    background: var(--ctp-surface1);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(180, 190, 254, 0.3);
   }
 
-  .hero-visual {
+  .btn-secondary:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* Hero Carousel */
+  .hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+  }
+
+  .carousel-wrapper-hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(30, 30, 46, 0.95), rgba(24, 24, 37, 0.95));
+    box-shadow: 
+      inset 4px 0 20px rgba(203, 166, 247, 0.15),
+      inset 0 0 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px) saturate(180%);
+    transition: all 0.4s ease;
+    border-left: 2px solid rgba(203, 166, 247, 0.3);
     position: relative;
   }
 
-  .terminal-window {
-    background: var(--surface);
-    border-radius: 0.75rem;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--surface-light);
+  .carousel-wrapper-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(203, 166, 247, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
   }
 
-  .terminal-header {
-    background: rgba(36, 40, 59, 0.8);
-    padding: 0.75rem 1rem;
+  .carousel-wrapper-hero:hover {
+    box-shadow: 
+      inset 4px 0 30px rgba(203, 166, 247, 0.25),
+      inset 0 0 80px rgba(0, 0, 0, 0.4);
+    border-left-color: rgba(203, 166, 247, 0.5);
+  }
+
+  .carousel-track-hero {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+  }
+
+  .carousel-slide-hero {
+    min-width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    border-bottom: 1px solid var(--surface-light);
+    justify-content: center;
+    background: transparent;
+    position: relative;
+    z-index: 2;
   }
 
-  .terminal-buttons {
+  .carousel-image-hero {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    padding: 3rem;
+    filter: brightness(0.95) contrast(1.05);
+  }
+
+  .carousel-slide-hero:hover .carousel-image-hero {
+    transform: scale(1.005);
+    filter: brightness(1) contrast(1.1);
+  }
+
+  /* Carousel Navigation Dots */
+  .carousel-dots-hero {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    gap: 0.5rem;
+    gap: 12px;
+    z-index: 10;
+    background: rgba(30, 30, 46, 0.9);
+    padding: 14px 28px;
+    border-radius: 35px;
+    backdrop-filter: blur(12px) saturate(180%);
+    border: 2px solid rgba(203, 166, 247, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(203, 166, 247, 0.2);
   }
 
-  .terminal-buttons span {
-    width: 12px;
-    height: 12px;
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
+    background: var(--ctp-surface2);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    position: relative;
   }
 
-  .btn-close {
-    background: #ff5f56;
+  .carousel-dot::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: transparent;
+    transition: background 0.3s ease;
   }
 
-  .btn-minimize {
-    background: #ffbd2e;
+  .carousel-dot:hover {
+    background: var(--ctp-overlay1);
+    transform: scale(1.4);
   }
 
-  .btn-maximize {
-    background: #27c93f;
+  .carousel-dot:hover::after {
+    background: rgba(203, 166, 247, 0.25);
   }
 
-  .terminal-title {
-    color: var(--text-dim);
-    font-size: 0.875rem;
+  .carousel-dot.active {
+    background: linear-gradient(135deg, var(--ctp-mauve), var(--ctp-pink), var(--ctp-lavender));
+    width: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 12px rgba(203, 166, 247, 0.7), 0 0 20px rgba(203, 166, 247, 0.4);
   }
 
-  .terminal-body {
-    padding: 1.5rem;
+  /* Control Buttons */
+  .carousel-btn-hero {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(30, 30, 46, 0.9);
+    border: 2px solid rgba(203, 166, 247, 0.4);
+    color: var(--ctp-lavender);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(12px) saturate(180%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(203, 166, 247, 0.1);
+  }
+
+  .carousel-btn-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--ctp-mauve), var(--ctp-pink), var(--ctp-lavender));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .carousel-btn-hero svg {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+  }
+
+  .carousel-btn-hero:hover {
+    border-color: rgba(203, 166, 247, 0.8);
+    box-shadow: 0 8px 30px rgba(203, 166, 247, 0.5), 0 0 0 4px rgba(203, 166, 247, 0.2);
+    transform: translateY(-50%) scale(1.15);
+  }
+
+  .carousel-btn-hero:hover::before {
+    opacity: 1;
+  }
+
+  .carousel-btn-hero:hover svg {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px rgba(203, 166, 247, 0.9));
+  }
+
+  .carousel-btn-hero:hover {
+    color: var(--ctp-crust);
+  }
+
+  .carousel-btn-hero:active {
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .carousel-btn-prev {
+    left: 30px;
+  }
+
+  .carousel-btn-next {
+    right: 30px;
+  }
+
+  /* Slide Counter */
+  .carousel-counter-hero {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(30, 30, 46, 0.9);
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: var(--ctp-text);
+    font-size: 0.95rem;
+    font-weight: 700;
+    z-index: 10;
+    backdrop-filter: blur(12px) saturate(180%);
+    border: 2px solid rgba(203, 166, 247, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(203, 166, 247, 0.2);
     font-family: 'Fira Code', monospace;
-    font-size: 0.875rem;
-    line-height: 1.6;
+    letter-spacing: 0.5px;
   }
 
-  .terminal-body code {
-    color: var(--text);
+  /* Animations */
+  @keyframes diagonalShine {
+    0% {
+      transform: translateX(-300%) translateY(-300%);
+    }
+    100% {
+      transform: translateX(300%) translateY(300%);
+    }
   }
 
-  .comment {
-    color: #565f89;
+  @keyframes gradientFlow {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 
-  .keyword {
-    color: var(--secondary);
+  @keyframes backgroundPulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
   }
 
-  .variable {
-    color: var(--text);
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
   }
 
-  .property {
-    color: var(--accent);
+  /* Auto-scroll animation */
+  @keyframes autoScroll {
+    0%, 20% {
+      transform: translateX(0%);
+    }
+    25%, 45% {
+      transform: translateX(-100%);
+    }
+    50%, 70% {
+      transform: translateX(-200%);
+    }
+    75%, 95% {
+      transform: translateX(-300%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
   }
 
-  .string {
-    color: var(--success);
-  }
-
-  .boolean {
-    color: var(--warning);
-  }
-
-  .function {
-    color: var(--primary);
-  }
-
+  /* Responsive Design */
   @media (max-width: 968px) {
     .hero-content {
       grid-template-columns: 1fr;
-      gap: 3rem;
+      grid-template-rows: auto 1fr;
+      height: auto;
+      min-height: 100vh;
+      gap: 0;
+    }
+
+    .hero-text {
+      padding: 2rem;
+      height: auto;
     }
 
     .hero-title {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
     }
 
     .hero-description {
       font-size: 1.125rem;
     }
 
-    .hero-visual {
-      order: -1;
+    .hero-carousel {
+      height: 60vh;
+      min-height: 400px;
+    }
+
+    .carousel-wrapper-hero {
+      border-left: none;
+      border-top: 2px solid rgba(203, 166, 247, 0.3);
+      border-radius: 0;
+    }
+
+    .carousel-wrapper-hero::before {
+      background: linear-gradient(180deg, rgba(203, 166, 247, 0.05) 0%, transparent 50%);
+    }
+
+    .carousel-btn-hero {
+      width: 48px;
+      height: 48px;
+    }
+
+    .carousel-btn-prev {
+      left: 20px;
+    }
+
+    .carousel-btn-next {
+      right: 20px;
+    }
+
+    .carousel-counter-hero {
+      top: 20px;
+      right: 20px;
+      font-size: 0.85rem;
+      padding: 8px 16px;
+    }
+
+    .carousel-image-hero {
+      padding: 2rem;
     }
   }
 
   @media (max-width: 640px) {
+    .hero {
+      padding: 1rem;
+    }
+
+    .hero-text {
+      padding: 1.5rem;
+    }
+
     .hero-title {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
 
     .hero-buttons {
@@ -285,5 +631,180 @@ const baseUrl = '/nvim-config';
       justify-content: center;
       width: 100%;
     }
+
+    .hero-carousel {
+      height: 50vh;
+      min-height: 350px;
+    }
+
+    .carousel-btn-hero {
+      width: 42px;
+      height: 42px;
+    }
+
+    .carousel-btn-prev {
+      left: 15px;
+    }
+
+    .carousel-btn-next {
+      right: 15px;
+    }
+
+    .carousel-dots-hero {
+      padding: 10px 20px;
+      gap: 10px;
+      bottom: 20px;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+    }
+
+    .carousel-dot.active {
+      width: 22px;
+    }
+
+    .carousel-counter-hero {
+      top: 15px;
+      right: 15px;
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+
+    .carousel-image-hero {
+      padding: 1.5rem;
+    }
+  }
+
+  /* Light Theme Support */
+  :root[data-theme='light'] .hero {
+    background: var(--ctp-base);
+  }
+
+  :root[data-theme='light'] .hero-badge {
+    background: rgba(136, 57, 239, 0.1);
+    border-color: rgba(136, 57, 239, 0.3);
+  }
+
+  :root[data-theme='light'] .gradient-text {
+    background: linear-gradient(45deg, var(--ctp-mauve), var(--ctp-peach), var(--ctp-maroon), var(--ctp-lavender));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  :root[data-theme='light'] .carousel-wrapper-hero {
+    background: rgba(220, 224, 232, 0.6);
+  }
+
+  :root[data-theme='light'] .carousel-slide-hero {
+    background: var(--ctp-mantle);
+  }
+
+  :root[data-theme='light'] .carousel-dots-hero {
+    background: rgba(239, 241, 245, 0.8);
+    border-color: rgba(136, 57, 239, 0.2);
   }
 </style>
+
+<script>
+  // Hero Carousel Script
+  const heroTrack = document.getElementById('heroCarouselTrack');
+  const heroDotsContainer = document.getElementById('heroCarouselDots');
+  const heroSlides = document.querySelectorAll('.carousel-slide-hero');
+  const heroPrevBtn = document.getElementById('heroPrevBtn');
+  const heroNextBtn = document.getElementById('heroNextBtn');
+  const heroCounter = document.getElementById('heroCounter');
+  const totalHeroSlides = heroSlides.length;
+  let currentHeroSlide = 0;
+  let heroAutoScrollInterval: number;
+
+  // Create dots
+  for (let i = 0; i < totalHeroSlides; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot';
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      goToHeroSlide(i);
+      resetAutoScroll();
+    });
+    heroDotsContainer.appendChild(dot);
+  }
+
+  const heroDots = document.querySelectorAll('.carousel-dot');
+
+  function updateHeroCarousel() {
+    heroTrack.style.transform = `translateX(-${currentHeroSlide * 100}%)`;
+    heroCounter.textContent = `${currentHeroSlide + 1} / ${totalHeroSlides}`;
+    
+    heroDots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentHeroSlide);
+    });
+  }
+
+  function goToHeroSlide(index: number) {
+    currentHeroSlide = index;
+    updateHeroCarousel();
+  }
+
+  function nextHeroSlide() {
+    currentHeroSlide = (currentHeroSlide + 1) % totalHeroSlides;
+    updateHeroCarousel();
+  }
+
+  function prevHeroSlide() {
+    currentHeroSlide = (currentHeroSlide - 1 + totalHeroSlides) % totalHeroSlides;
+    updateHeroCarousel();
+  }
+
+  // Button event listeners
+  heroNextBtn?.addEventListener('click', () => {
+    nextHeroSlide();
+    resetAutoScroll();
+  });
+
+  heroPrevBtn?.addEventListener('click', () => {
+    prevHeroSlide();
+    resetAutoScroll();
+  });
+
+  // Auto-scroll functionality
+  function startAutoScroll() {
+    heroAutoScrollInterval = setInterval(nextHeroSlide, 4000);
+  }
+
+  function resetAutoScroll() {
+    clearInterval(heroAutoScrollInterval);
+    startAutoScroll();
+  }
+
+  // Pause on hover
+  const carouselWrapper = document.querySelector('.carousel-wrapper-hero');
+  if (carouselWrapper) {
+    carouselWrapper.addEventListener('mouseenter', () => {
+      clearInterval(heroAutoScrollInterval);
+    });
+
+    carouselWrapper.addEventListener('mouseleave', () => {
+      startAutoScroll();
+    });
+  }
+
+  // Initialize
+  updateHeroCarousel();
+  startAutoScroll();
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      prevHeroSlide();
+      resetAutoScroll();
+    }
+    if (e.key === 'ArrowRight') {
+      nextHeroSlide();
+      resetAutoScroll();
+    }
+  });
+</script>

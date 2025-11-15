@@ -1,0 +1,267 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const plugins = [
+  {
+    name: 'Neo-tree',
+    category: 'File Explorer',
+    icon: '📁',
+    description: 'A fast and feature-rich file explorer that helps you navigate your project structure efficiently. It includes git integration and custom file icons.',
+    keybindings: [
+      { key: '<C-b>', desc: 'Toggle file explorer' },
+    ],
+    config: 'lua/plugins/NeoTree.lua'
+  },
+  {
+    name: 'Telescope',
+    category: 'Fuzzy Finder',
+    icon: '🔍',
+    description: 'A highly extendable fuzzy finder over lists. Find, filter, preview and pick files, buffers, git commits, and more.',
+    keybindings: [
+      { key: '<leader>sf', desc: 'Find files' },
+      { key: '<leader>sg', desc: 'Live grep' },
+      { key: '<leader>sb', desc: 'Browse buffers' },
+      { key: '<leader>sh', desc: 'Search help tags' },
+      { key: '<leader>sk', desc: 'Search keymaps' },
+    ],
+    config: 'lua/plugins/telescope.lua'
+  },
+  {
+    name: 'LSP Config',
+    category: 'LSP & Autocompletion',
+    icon: '🔧',
+    description: 'The core of the IDE experience. Provides code completion, diagnostics, and other language-specific features.',
+    keybindings: [
+      { key: 'grd', desc: 'Go to definition' },
+      { key: 'grr', desc: 'Go to references' },
+      { key: 'K', desc: 'Hover documentation' },
+      { key: 'gra', desc: 'Code action' },
+      { key: 'grn', desc: 'Rename symbol' },
+    ],
+    config: 'lua/plugins/lsp_config.lua'
+  },
+  {
+    name: 'Mason',
+    category: 'LSP & Autocompletion',
+    icon: '📦',
+    description: 'Manages LSP servers, DAP servers, linters, and formatters. Easily install and manage your language tooling.',
+    keybindings: [
+      { key: ':Mason', desc: 'Open Mason UI' },
+    ],
+    config: 'lua/plugins/mason.lua'
+  },
+  {
+    name: 'nvim-cmp',
+    category: 'LSP & Autocompletion',
+    icon: '💡',
+    description: 'A completion engine for Neovim. It provides completion suggestions from various sources like LSP, snippets, and more.',
+    keybindings: [
+      { key: '<Tab>', desc: 'Select next completion' },
+      { key: '<S-Tab>', desc: 'Select previous completion' },
+      { key: '<CR>', desc: 'Confirm completion' },
+    ],
+    config: 'lua/plugins/auto_completion.lua'
+  },
+  {
+    name: 'Treesitter',
+    category: 'Syntax',
+    icon: '🌳',
+    description: 'Provides fast and accurate syntax highlighting, and enables features like code folding and intelligent text objects.',
+    keybindings: [],
+    config: 'lua/plugins/treesitter.lua'
+  },
+  {
+    name: 'Lualine',
+    category: 'UI',
+    icon: '🎨',
+    description: 'A blazing fast and easy to configure statusline for Neovim.',
+    keybindings: [],
+    config: 'lua/plugins/lualine.lua'
+  },
+  {
+    name: 'Which-key',
+    category: 'UI',
+    icon: '⌨️',
+    description: 'Displays a popup with possible keybindings following your leader key.',
+    keybindings: [
+      { key: '<leader>', desc: 'Show keybinding suggestions' },
+    ],
+    config: 'lua/plugins/which_key.lua'
+  },
+  {
+    name: 'GitSigns',
+    category: 'Git',
+    icon: '🎯',
+    description: 'Shows git diff markers in the sign column and allows you to perform git operations on hunks.',
+    keybindings: [],
+    config: 'lua/plugins/git_signs.lua'
+  }
+];
+---
+
+<Layout title="Plugins - nvim-config">
+  <Header />
+  <main class="plugins-page">
+    <div class="container">
+      <h1 class="page-title">Installed Plugins</h1>
+      <p class="page-intro">A curated list of plugins that power this Neovim configuration.</p>
+
+      <div class="plugins-grid">
+        {plugins.map(plugin => (
+          <div class="plugin-card">
+            <div class="plugin-card-header">
+              <div class="plugin-icon">{plugin.icon}</div>
+              <div>
+                <h2 class="plugin-name">{plugin.name}</h2>
+                <p class="plugin-category">{plugin.category}</p>
+              </div>
+            </div>
+            <p class="plugin-description">{plugin.description}</p>
+            {plugin.keybindings.length > 0 && (
+              <div class="plugin-keybindings">
+                <h3>Keybindings</h3>
+                <ul>
+                  {plugin.keybindings.map(kb => (
+                    <li><code>{kb.key}</code> - {kb.desc}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <div class="plugin-config-link">
+              <a href={`https://github.com/raj8664/nvim-config/blob/main/${plugin.config}`} target="_blank">
+                View Configuration
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .plugins-page {
+    padding: 6rem 2rem 4rem;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .page-intro {
+    font-size: 1.25rem;
+    color: var(--text-dim);
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .plugins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .plugin-card {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--surface-light);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+  }
+
+  .plugin-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(122, 162, 247, 0.15);
+  }
+
+  .plugin-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .plugin-icon {
+    font-size: 2.5rem;
+  }
+
+  .plugin-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .plugin-category {
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .plugin-description {
+    color: var(--text-dim);
+    line-height: 1.8;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .plugin-keybindings h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .plugin-keybindings ul {
+    list-style: none;
+    margin-left: 0;
+    color: var(--text-dim);
+  }
+
+  .plugin-keybindings li {
+    margin-bottom: 0.25rem;
+  }
+
+  .plugin-keybindings code {
+    background: var(--background);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+    color: var(--primary);
+  }
+
+  .plugin-config-link {
+    margin-top: 1.5rem;
+    text-align: right;
+  }
+
+  .plugin-config-link a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  .plugin-config-link a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+</style>
