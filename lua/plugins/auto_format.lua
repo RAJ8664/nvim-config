@@ -26,8 +26,19 @@ return {
 				sql = { "sql_formatter" }, -- Add SQL formatter
 				php = { "phpcbf" },
 				rust = { "rustfmt" },
+				xml = { "xmlformat" },
 			},
 			formatters = {
+				xmlformat = {
+					command = "xmlformat",
+					args = {},
+					stdin = true,
+				},
+				xmllint = {
+					command = "xmllint",
+					args = { "--format", "-" },
+					stdin = true,
+				},
 				prettier = {
 					prepend_args = {
 						"--tab-width=4",
