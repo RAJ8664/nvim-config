@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear();
     <div class="footer-content">
       <div class="footer-section">
         <h3 class="footer-title">
-          <span class="logo-icon">⚡</span>
+        <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1763201924/Screenshot_07-Nov_16-12-10_4303_zbprca.png" alt="Logo" class="logo-img" />
           nvim-config
         </h3>
         <p class="footer-description">
@@ -55,6 +55,12 @@ const currentYear = new Date().getFullYear();
     grid-template-columns: 2fr 1fr 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
+  }
+  .logo-img {
+    width: 22px;         
+    height: 22px;
+    border-radius: 50%;   
+    object-fit: cover;    
   }
 
   .footer-section {

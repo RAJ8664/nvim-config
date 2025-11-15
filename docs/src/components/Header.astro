@@ -5,7 +5,7 @@ const baseUrl = '/nvim-config';
 <header class="header">
   <div class="container">
     <div class="logo">
-      <span class="logo-icon">⚡</span>
+      <img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1763201924/Screenshot_07-Nov_16-12-10_4303_zbprca.png" alt="Logo" class="logo-img" />
       <span class="logo-text">nvim-config</span>
     </div>
     <nav class="nav">
@@ -54,6 +54,14 @@ const baseUrl = '/nvim-config';
   .logo-icon {
     font-size: 1.5rem;
   }
+
+ 
+.logo-img {
+  width: 22px;         /* Same height as your original lightning icon */
+  height: 22px;
+  border-radius: 50%;   /* Makes the image circular */
+  object-fit: cover;    /* Prevents stretching */
+}
 
   .nav {
     display: flex;
