@@ -1,11 +1,8 @@
 return {
 	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {
-			indent = {
-				char = "*",
-			},
-		},
+		"saghen/blink.indent",
+		--- @module 'blink.indent'
+		--- @type blink.indent.Config
+		-- opts = {},
 	},
 }
