@@ -10,47 +10,38 @@ import Footer from '../components/Footer.astro';
     <div class="container">
       <div class="docs-content">
         <h1 class="page-title">Quickstart Guide</h1>
-        <p class="page-intro">Get up and running with nvim-config in minutes</p>
 
         <section class="docs-section">
-          <h2>Prerequisites</h2>
+          <h2>📋 Prerequisites</h2>
           <ul>
-            <li>Neovim >= 0.9.0</li>
-            <li>Git</li>
-            <li>A Nerd Font (optional but recommended)</li>
-            <li>ripgrep (for telescope grep)</li>
+            <li><strong>Neovim v0.8.0+</strong></li>
+            <li><strong>Git</strong></li>
+            <li><strong>A Nerd Font</strong> (for icons)</li>
+            <li><strong>ripgrep</strong> (optional, for telescope grep)</li>
           </ul>
         </section>
 
         <section class="docs-section">
-          <h2>Installation</h2>
-          <h3>Linux/MacOS</h3>
+          <h2>🚀 Installation</h2>
+          
+          <h3>Quick Install (Recommended)</h3>
           <div class="code-block">
-            <pre><code># Backup your existing config
-mv ~/.config/nvim ~/.config/nvim.bak
+            <pre><code># Clone the repository
+git clone https://github.com/RAJ8664/nvim-config.git
 
-# Clone the repository
-git clone https://github.com/raj8664/nvim-config.git ~/.config/nvim
+# Run the installation script
+cd nvim-config
+chmod +x install.sh
+./install.sh
 
 # Start Neovim
 nvim</code></pre>
           </div>
 
-          <h3>Windows (PowerShell)</h3>
-          <div class="code-block">
-            <pre><code># Backup your existing config
-Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
-
-# Clone the repository
-git clone https://github.com/raj8664/nvim-config.git $env:LOCALAPPDATA\nvim
-
-# Start Neovim
-nvim</code></pre>
-          </div>
         </section>
 
         <section class="docs-section">
-          <h2>First Steps</h2>
+          <h2>🔧 First Steps</h2>
           <ol>
             <li>
               <strong>Automatic Plugin Installation:</strong>
@@ -61,60 +52,181 @@ nvim</code></pre>
               <div class="code-block">
                 <pre><code>:Mason</code></pre>
               </div>
-              <p>Use Mason to install LSP servers for your languages (press 'i' to install)</p>
+              <p>Use Mason to install LSP servers for your languages (press 'i' to install). Pre-configured LSPs include: lua_ls, clangd, ts_ls, jdtls, phpactor, tailwindcss, html, and sqls.</p>
             </li>
             <li>
               <strong>Install Treesitter Parsers:</strong>
               <div class="code-block">
                 <pre><code>:TSInstall &lt;language&gt;</code></pre>
               </div>
-              <p>Example: <code>:TSInstall lua python javascript</code></p>
+              <p>Example: <code>:TSInstall lua python javascript cpp</code></p>
             </li>
           </ol>
         </section>
 
         <section class="docs-section">
-          <h2>Key Bindings</h2>
+          <h2>⌨️ Essential Key Bindings</h2>
           <p>Leader key is set to <code>&lt;Space&gt;</code></p>
           
           <h3>General</h3>
           <ul class="keybinds-list">
-            <li><code>&lt;Space&gt; + ff</code> - Find files</li>
-            <li><code>&lt;Space&gt; + fg</code> - Live grep</li>
-            <li><code>&lt;Space&gt; + fb</code> - Browse buffers</li>
-            <li><code>&lt;Space&gt; + e</code> - Toggle file explorer</li>
+            <li><code>Ctrl+s</code> - Save file</li>
+            <li><code>Ctrl+a</code> - Select all</li>
+            <li><code>Ctrl+z</code> - Undo (Insert mode)</li>
+            <li><code>Esc</code> - Clear highlights</li>
+            <li><code>&lt;Space&gt; + sn</code> - Save file without auto formatting</li>
+            <li><code>&lt;Space&gt; + q</code> - Open diagnostic quickfix list</li>
           </ul>
 
-          <h3>LSP</h3>
+          <h3>Navigation</h3>
+          <ul class="keybinds-list">
+            <li><code>Ctrl+h/j/k/l</code> - Move focus between windows</li>
+            <li><code>Tab</code> - Next buffer</li>
+            <li><code>Shift+Tab</code> - Previous buffer</li>
+            <li><code>Ctrl+b</code> - Toggle NeoTree file explorer</li>
+          </ul>
+
+          <h3>Telescope (Fuzzy Finder)</h3>
+          <ul class="keybinds-list">
+            <li><code>&lt;Space&gt; + sh</code> - Search help</li>
+            <li><code>&lt;Space&gt; + sk</code> - Search keymaps</li>
+            <li><code>&lt;Space&gt; + sf</code> - Search files</li>
+            <li><code>&lt;Space&gt; + sg</code> - Search by grep</li>
+            <li><code>&lt;Space&gt; + sw</code> - Search current word</li>
+            <li><code>&lt;Space&gt; + sd</code> - Search diagnostics</li>
+            <li><code>&lt;Space&gt; + sr</code> - Resume last search</li>
+            <li><code>&lt;Space&gt; &lt;Space&gt;</code> - Find existing buffers</li>
+            <li><code>&lt;Space&gt; + /</code> - Fuzzy search in current buffer</li>
+          </ul>
+
+          <h3>LSP (Language Server)</h3>
           <ul class="keybinds-list">
             <li><code>gd</code> - Go to definition</li>
             <li><code>gr</code> - Go to references</li>
+            <li><code>gl</code> - View line diagnostics</li>
             <li><code>K</code> - Hover documentation</li>
-            <li><code>&lt;Space&gt; + ca</code> - Code action</li>
-            <li><code>&lt;Space&gt; + rn</code> - Rename symbol</li>
+            <li><code>&lt;Space&gt; + f</code> - Format file or range</li>
+          </ul>
+
+          <h3>Git Integration</h3>
+          <ul class="keybinds-list">
+            <li><code>&lt;Space&gt; + hs</code> - Stage hunk</li>
+            <li><code>&lt;Space&gt; + hr</code> - Reset hunk</li>
+            <li><code>&lt;Space&gt; + hS</code> - Stage buffer</li>
+            <li><code>&lt;Space&gt; + hu</code> - Undo stage hunk</li>
+            <li><code>&lt;Space&gt; + hp</code> - Preview hunk</li>
+            <li><code>&lt;Space&gt; + hb</code> - Blame line</li>
+            <li><code>&lt;Space&gt; + hd</code> - Diff against index</li>
+            <li><code>&lt;Space&gt; + gt</code> - Toggle blame line display</li>
+          </ul>
+
+          <h3>Debugging (nvim-dap)</h3>
+          <ul class="keybinds-list">
+            <li><code>F5</code> or <code>&lt;Space&gt; + Dc</code> - Start/Continue debugging</li>
+            <li><code>F1</code> or <code>&lt;Space&gt; + Dsi</code> - Step into</li>
+            <li><code>F2</code> or <code>&lt;Space&gt; + DsO</code> - Step over</li>
+            <li><code>F3</code> or <code>&lt;Space&gt; + Dso</code> - Step out</li>
+            <li><code>&lt;Space&gt; + b</code> or <code>&lt;Space&gt; + Db</code> - Toggle breakpoint</li>
+            <li><code>&lt;Space&gt; + DB</code> - Set conditional breakpoint</li>
+            <li><code>&lt;Space&gt; + Dt</code> - Toggle debug UI</li>
+            <li><code>F7</code> - See last session result</li>
+          </ul>
+
+          <h3>Code Navigation (Flash)</h3>
+          <ul class="keybinds-list">
+            <li><code>s</code> - Flash (quick jump)</li>
+            <li><code>S</code> - Flash Treesitter</li>
+            <li><code>r</code> - Remote Flash (operator mode)</li>
+            <li><code>R</code> - Treesitter Search</li>
+          </ul>
+
+          <h3>Competitive Programming</h3>
+          <ul class="keybinds-list">
+            <li><code>&lt;Space&gt; + jc</code> - Replace test case to input.txt</li>
+            <li><code>&lt;Space&gt; + jr</code> - Run Java code</li>
+            <li><code>&lt;Space&gt; + jf</code> - Run C++ code</li>
           </ul>
         </section>
 
         <section class="docs-section">
-          <h2>Customization</h2>
-          <p>You can customize the configuration by editing files in <code>~/.config/nvim/lua/</code></p>
+          <h2>🧩 Core Plugins</h2>
+          <p>This configuration includes carefully selected plugins:</p>
+          
+          <h3>Core & UI</h3>
           <ul>
-            <li><code>lua/core/options.lua</code> - Vim options</li>
-            <li><code>lua/core/keymaps.lua</code> - Key mappings</li>
-            <li><code>lua/plugins/</code> - Plugin configurations</li>
+            <li><strong>lazy.nvim</strong> - Plugin manager</li>
+            <li><strong>Kanagawa.nvim</strong> - Primary color scheme</li>
+            <li><strong>lualine.nvim</strong> - Status line</li>
+            <li><strong>NeoTree.lua</strong> - File explorer</li>
+            <li><strong>bufferline.nvim</strong> - Buffer line</li>
+            <li><strong>which-key.nvim</strong> - Keybinding popup</li>
+            <li><strong>telescope.nvim</strong> - Fuzzy finder</li>
+            <li><strong>nvim-treesitter</strong> - Syntax highlighting</li>
+            <li><strong>dashboard-nvim</strong> - Start screen</li>
+          </ul>
+
+          <h3>Development Tools</h3>
+          <ul>
+            <li><strong>nvim-lspconfig</strong> - LSP configuration</li>
+            <li><strong>mason.nvim</strong> - LSP/linter/formatter manager</li>
+            <li><strong>blink-cmp</strong> - Completion engine</li>
+            <li><strong>nvim-lint</strong> - Asynchronous linting</li>
+            <li><strong>gitsigns.nvim</strong> - Git integration</li>
+            <li><strong>nvim-dap</strong> - Debug Adapter Protocol</li>
+          </ul>
+
+          <h3>Quality of Life</h3>
+          <ul>
+            <li><strong>auto-pairs</strong> - Auto-close brackets</li>
+            <li><strong>comment.nvim</strong> - Easy commenting</li>
+            <li><strong>indent-blankline.nvim</strong> - Indentation guides</li>
+            <li><strong>flash.nvim</strong> - Quick navigation</li>
           </ul>
         </section>
 
         <section class="docs-section">
-          <h2>Updating</h2>
+          <h2>🌐 Language Support</h2>
+          <p>Pre-configured Language Server Protocols (LSPs):</p>
+          <ul>
+            <li><strong>lua_ls</strong> - Lua</li>
+            <li><strong>clangd</strong> - C/C++</li>
+            <li><strong>ts_ls</strong> - TypeScript/JavaScript</li>
+            <li><strong>jdtls</strong> - Java</li>
+            <li><strong>phpactor</strong> - PHP</li>
+            <li><strong>tailwindcss</strong> - Tailwind CSS</li>
+            <li><strong>html</strong> - HTML</li>
+            <li><strong>sqls</strong> - SQL</li>
+          </ul>
+          <p>Add more LSPs by editing <code>lua/plugins/lsp_config.lua</code></p>
+        </section>
+
+        <section class="docs-section">
+          <h2>🎨 Customization</h2>
+          <p>Easily customize by editing files in <code>~/.config/nvim/lua/</code></p>
+          <ul>
+            <li><code>lua/core/options.lua</code> - General Neovim settings</li>
+            <li><code>lua/core/keymaps.lua</code> - Global keymappings</li>
+            <li><code>lua/plugins/</code> - Plugin configurations</li>
+            <li><code>lua/plugins/lsp_config.lua</code> - LSP and language server settings</li>
+          </ul>
+        </section>
+
+        <section class="docs-section">
+          <h2>🔄 Updating</h2>
           <p>To update plugins, use the following command inside Neovim:</p>
           <div class="code-block">
             <pre><code>:Lazy sync</code></pre>
           </div>
+          <p>To update the configuration itself:</p>
+          <div class="code-block">
+            <pre><code>cd ~/.config/nvim
+git pull</code></pre>
+          </div>
         </section>
 
         <section class="docs-section">
-          <h2>Troubleshooting</h2>
+          <h2>🔧 Troubleshooting</h2>
+          
           <h3>Plugins not loading</h3>
           <p>Try removing the plugin cache and reinstalling:</p>
           <div class="code-block">
@@ -123,17 +235,26 @@ nvim</code></pre>
           </div>
 
           <h3>LSP not working</h3>
-          <p>Make sure you have installed the language server via Mason:</p>
+          <p>Verify language server installation:</p>
           <div class="code-block">
             <pre><code>:Mason
 :LspInfo</code></pre>
+          </div>
+
+          <h3>Icons not displaying</h3>
+          <p>Make sure you have a Nerd Font installed and set as your terminal font.</p>
+
+          <h3>Slow startup</h3>
+          <p>Profile your startup time to identify bottlenecks:</p>
+          <div class="code-block">
+            <pre><code>nvim --startuptime startup.log</code></pre>
           </div>
         </section>
 
         <section class="docs-section cta-section">
           <h2>Need Help?</h2>
-          <p>If you encounter any issues, please open an issue on GitHub.</p>
-          <a href="https://github.com/raj8664/nvim-config/issues" target="_blank" class="btn-primary">
+          <p>If you encounter any issues or have questions, please open an issue on GitHub.</p>
+          <a href="https://github.com/RAJ8664/nvim-config/issues" target="_blank" class="btn-primary">
             Open an Issue
           </a>
         </section>
@@ -197,6 +318,13 @@ nvim</code></pre>
     color: var(--primary);
   }
 
+  .docs-section h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+    color: var(--text);
+  }
+
   .docs-section p {
     color: var(--text-dim);
     line-height: 1.8;
@@ -212,6 +340,16 @@ nvim</code></pre>
 
   .docs-section li {
     margin-bottom: 0.5rem;
+  }
+
+  .features-list {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .features-list li {
+    padding: 0.75rem 0;
+    color: var(--text);
   }
 
   .code-block {
@@ -254,8 +392,10 @@ nvim</code></pre>
 
   .keybinds-list code {
     display: inline-block;
-    min-width: 150px;
+    min-width: 200px;
     margin-right: 1rem;
+    background: rgba(122, 162, 247, 0.1);
+    border: 1px solid rgba(122, 162, 247, 0.3);
   }
 
   .cta-section {
@@ -281,6 +421,7 @@ nvim</code></pre>
   .btn-primary:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(122, 162, 247, 0.4);
   }
 
   @media (max-width: 768px) {
@@ -300,9 +441,14 @@ nvim</code></pre>
       font-size: 1.5rem;
     }
 
+    .docs-section h3 {
+      font-size: 1.25rem;
+    }
+
     .keybinds-list code {
       display: block;
       margin-bottom: 0.5rem;
+      min-width: auto;
     }
   }
 </style>
