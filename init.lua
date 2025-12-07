@@ -52,7 +52,7 @@ require("lazy").setup({
 	-- require("plugins.smoothScroll"),
 	require("plugins.MenuUI"),
 	require("plugins.typing"),
-	-- require("plugins.dropBar"),
+	require("plugins.dropBar"),
 	require("plugins.Gemini-Cli"),
 	-- require("plugins.dashboard"),
 	require("plugins.minty"),

@@ -13,7 +13,9 @@ vim.keymap.set("i", "<C-z>", "<C-o>u", { noremap = true, silent = true })
 --view diagnostics;
 vim.keymap.set("n", "gl", function()
 	vim.diagnostic.open_float()
-end, { desc = "View diagnostics for the current line" })
+end, {
+	desc = " view diagnostics (line)",
+})
 
 --select all in normal mode;
 vim.keymap.set("n", "<C-a>", "gg<S-v>G", { noremap = true, silent = true })
@@ -49,40 +51,45 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
---my cpp related stuffs;
---used to replace the copied test case to input.txt;
+-- my cpp related stuffs;
+-- used to replace the copied test case to input.txt;
 vim.keymap.set("n", "<leader>jc", function()
 	local file_dir = vim.fn.expand("%:p:h")
 	local script = file_dir .. "/input.sh"
 	vim.cmd("terminal bash " .. script)
 	vim.cmd("bd")
-end)
+end, {
+	desc = "󰈙 prepare input (input.txt)",
+})
 
---to run the java code and display the output along with dbg file;
+-- to run the java code and display the output along with dbg file;
 vim.keymap.set("n", "<leader>jr", function()
 	local file_dir = vim.fn.expand("%:p:h")
 	local script = file_dir .. "/run_java.sh"
 	vim.cmd("terminal bash " .. script)
-end)
+end, {
+	desc = " run Java program",
+})
 
---to run the cpp code and display the output along with dbg file;
+-- to run the cpp code and display the output along with dbg file;
 vim.keymap.set("n", "<leader>jf", function()
 	local file_dir = vim.fn.expand("%:p:h")
 	local script = file_dir .. "/run_cpp.sh"
 	vim.cmd("terminal bash " .. script)
-end)
+end, {
+	desc = " run C++ program",
+})
 
 vim.keymap.set("n", "<leader>gc", function()
-    require("gitlink").copy()
+	require("gitlink").copy()
 end, {
-    desc = "copy github link",
-    silent = true,
+	desc = "copy github link",
+	silent = true,
 })
 
 vim.keymap.set("n", "<leader>go", function()
-    require("gitlink").open()
+	require("gitlink").open()
 end, {
-    desc = "open in github",
-    silent = true,
+	desc = "open in github",
+	silent = true,
 })
-
