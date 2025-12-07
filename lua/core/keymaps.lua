@@ -71,3 +71,18 @@ vim.keymap.set("n", "<leader>jf", function()
 	local script = file_dir .. "/run_cpp.sh"
 	vim.cmd("terminal bash " .. script)
 end)
+
+vim.keymap.set("n", "<leader>gc", function()
+    require("gitlink").copy()
+end, {
+    desc = "copy github link",
+    silent = true,
+})
+
+vim.keymap.set("n", "<leader>go", function()
+    require("gitlink").open()
+end, {
+    desc = "open in github",
+    silent = true,
+})
+
