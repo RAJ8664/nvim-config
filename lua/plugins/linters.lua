@@ -9,6 +9,7 @@ return {
 				-- markdown = { "markdownlint" },
 				typescript = { "biomejs" },
 				typescriptreact = { "biomejs" },
+				python = { "ruff" },
 			}
 			-- To allow other plugins to add linters to require('lint').linters_by_ft,
 			-- instead set linters_by_ft like this:

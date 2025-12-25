@@ -7,7 +7,7 @@
   "blink-cmp-supermaven": { "branch": "main", "commit": "635ce12e9e2d2a5a483728ac764d0bc5b57af23b" },
   "blink-emoji.nvim": { "branch": "master", "commit": "066013e4c98a9318408ee3f1ca2dbcb6fa3e4c06" },
   "blink.cmp": { "branch": "main", "commit": "327fff91fe6af358e990be7be1ec8b78037d2138" },
-  "codecompanion.nvim": { "branch": "main", "commit": "6fe6b45b2f3b2e856801cba29d24ecc1bf2f8941" },
+  "codecompanion.nvim": { "branch": "main", "commit": "4790ea4e413cd828165994a4dc023da728873fa1" },
   "colorful-menu.nvim": { "branch": "master", "commit": "d5b97d247528be308b6b69d96b5950a30e470f3d" },
   "comment-box.nvim": { "branch": "main", "commit": "06bb771690bc9df0763d14769b779062d8f12bc5" },
   "conform.nvim": { "branch": "master", "commit": "9fd3d5e0b689ec1bf400c53cbbec72c6fdf24081" },
