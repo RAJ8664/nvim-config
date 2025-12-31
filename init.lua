@@ -70,6 +70,7 @@ require("lazy").setup({
 	require("plugins.inline"),
 	require("plugins.git"),
 	require("plugins.gitlink"),
+	require("plugins.chatbot"),
 
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -90,4 +91,25 @@ require("lazy").setup({
 			lazy = "💤 ",
 		},
 	},
+})
+
+local function set_tmux_bg(color)
+	if os.getenv("TMUX") then
+		os.execute("tmux set-option status-style bg='" .. color .. "'")
+	end
+end
+
+local tmux_group = vim.api.nvim_create_augroup("TmuxSync", { clear = true })
+vim.api.nvim_create_autocmd({ "VimEnter", "FocusGained", "TermResponse" }, {
+	group = tmux_group,
+	callback = function()
+		set_tmux_bg("#1E1E27")
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "VimLeave", "FocusLost" }, {
+	group = tmux_group,
+	callback = function()
+		set_tmux_bg("default")
+	end,
 })
