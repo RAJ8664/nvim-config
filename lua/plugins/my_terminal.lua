@@ -1,65 +1,70 @@
 return {
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    opts = {
-      -- ToggleTerm global config
-      size = 40,
-      open_mapping = [[<c-\>]],
-      hide_numbers = true,
-      shade_filetypes = {},
-      shade_terminals = true,
-      shading_factor = 2,
-      start_in_insert = true,
-      insert_mappings = true,
-      terminal_mappings = true,
-      persist_size = true,
-      direction = "float", -- default direction (will override per terminal later)
-      close_on_exit = true,
-      shell = vim.o.shell,
-      float_opts = {
-        border = "curved",
-        winblend = 0,
-        highlights = {
-          border = "Normal",
-          background = "Normal",
-        },
-      },
-    },
-    config = function(_, opts)
-      require("toggleterm").setup(opts)
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		config = function()
+			local purple = "#bd93f9"
+			local pink = "#ff79c6"
 
-      -- Create and manage multiple float terminals using Alt+1 to Alt+9
-      local Terminal = require("toggleterm.terminal").Terminal
-      local terminals = {}
+			vim.api.nvim_set_hl(0, "MultiTermBorder", { fg = pink })
 
-      local function toggle_named_term(name)
-        if not terminals[name] then
-          terminals[name] = Terminal:new({
-            name = name,
-            direction = "float",
-            hidden = true,
-            on_open = function(term)
-              vim.cmd("startinsert!")
-            end,
-          })
-        end
-        terminals[name]:toggle()
-      end
+			require("toggleterm").setup({
+				size = 40,
+				open_mapping = [[<c-\>]],
+				hide_numbers = true,
+				direction = "float",
+				float_opts = {
+					border = "curved",
+					winhighlight = "FloatBorder:MultiTermBorder",
+				},
+			})
 
-      -- Set mappings for Alt+1 to Alt+9 in normal and terminal mode
-      for i = 1, 9 do
-        local key = string.format("<A-%d>", i)
-        local term_name = tostring(i)
+			local Terminal = require("toggleterm.terminal").Terminal
+			local terminals = {}
 
-        vim.keymap.set("n", key, function()
-          toggle_named_term(term_name)
-        end, { noremap = true, silent = true, desc = "Toggle float terminal " .. i })
+			local function toggle_named_term(name)
+				if not terminals[name] then
+					terminals[name] = Terminal:new({
+						name = "Terminal " .. name,
+						direction = "float",
+						float_opts = {
+							border = {
+								{ "╭", "MultiTermBorder" },
+								{ "─", "MultiTermBorder" },
+								{ "╮", "MultiTermBorder" },
+								{ "│", "MultiTermBorder" },
+								{ "╯", "MultiTermBorder" },
+								{ "─", "MultiTermBorder" },
+								{ "╰", "MultiTermBorder" },
+								{ "│", "MultiTermBorder" },
+							},
+							winblend = 0,
+						},
+						on_open = function(term)
+							vim.cmd("startinsert!")
+							vim.api.nvim_buf_set_keymap(
+								term.bufnr,
+								"t",
+								"<Esc>",
+								[[<C-\><C-n>]],
+								{ noremap = true, silent = true }
+							)
+						end,
+					})
+				end
+				terminals[name]:toggle()
+			end
 
-        vim.keymap.set("t", key, function()
-          toggle_named_term(term_name)
-        end, { noremap = true, silent = true, desc = "Toggle float terminal " .. i })
-      end
-    end,
-  },
+			for i = 1, 9 do
+				local key = string.format("<A-%d>", i)
+				local term_name = tostring(i)
+				vim.keymap.set("n", key, function()
+					toggle_named_term(term_name)
+				end, { silent = true })
+				vim.keymap.set("t", key, function()
+					toggle_named_term(term_name)
+				end, { silent = true })
+			end
+		end,
+	},
 }
