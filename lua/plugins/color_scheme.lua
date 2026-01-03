@@ -7,6 +7,11 @@ return {
 		config = function()
 			require("kanagawa").setup({
 				transparent = false,
+				integrations = {
+					treesitter = true,
+					telescope = { enabled = true },
+					-- This will make your Telescope look even better automatically
+				},
 				colors = {
 					theme = {
 						all = {
@@ -19,9 +24,8 @@ return {
 				overrides = function(colors)
 					local theme = colors.theme
 					return {
-						LineNr = { fg = theme.ui.nontext, bg = "NONE" }, -- Line numbers transparent
-						CursorLineNr = { fg = theme.diag.warning, bold = true, bg = "NONE" }, -- Current line number transparent
-						SignColumn = { bg = "NONE" }, -- Sign column transparent
+						LineNr = { fg = theme.ui.nontext }, -- Line numbers
+						CursorLineNr = { fg = theme.diag.warning, bold = true }, -- Current line number
 					}
 				end,
 			})

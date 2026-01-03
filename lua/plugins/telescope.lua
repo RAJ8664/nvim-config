@@ -59,7 +59,62 @@ return { -- Fuzzy Finder (files, lsp, etc)
 			--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
 			--   },
 			-- },
-			-- pickers = {}
+			defaults = {
+				prompt_prefix = "   ",
+				selection_caret = " ❯ ",
+				entry_prefix = "   ",
+				initial_mode = "insert",
+				selection_strategy = "reset",
+				sorting_strategy = "ascending",
+				layout_strategy = "horizontal",
+				layout_config = {
+					horizontal = {
+						prompt_position = "top",
+						width = 0.9,
+						height = 0.8,
+						preview_width = 0.6,
+					},
+				},
+				borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+
+				path_display = { "tail" },
+				get_status_text = function()
+					return ""
+				end,
+			},
+			pickers = {
+				buffers = {
+					show_all_buffers = true,
+					sort_lastused = true,
+					entry_maker = function(entry)
+						local make_entry = require("telescope.make_entry")
+						local displayer = require("telescope.pickers.entry_display").create({
+							separator = " ",
+							items = {
+								{ width = 2 },
+								{ remaining = true },
+							},
+						})
+
+						local original_entry = make_entry.gen_from_buffer({})(entry)
+						original_entry.display = function(ent)
+							local icon, icon_hl = require("nvim-web-devicons").get_icon(
+								ent.filename,
+								string.match(ent.filename, "%a+$"),
+								{ default = true }
+							)
+							return displayer({
+								{ icon, icon_hl },
+								{ ent.filename, "TelescopeFileName" },
+							})
+						end
+						return original_entry
+					end,
+				},
+				oldfiles = {
+					path_display = { "tail" },
+				},
+			},
 			extensions = {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
@@ -67,11 +122,34 @@ return { -- Fuzzy Finder (files, lsp, etc)
 			},
 		})
 
-		-- Enable Telescope extensions if they are installed
+		local purple = "#bd93f9"
+		local bg_dark = "#1e1e2e"
+		local selection_bg = "#3d375e"
+		local pink = "#ff79c6"
+		local green = "#50fa7b"
+
+		local hl = vim.api.nvim_set_hl
+
+		hl(0, "TelescopeBorder", { fg = pink })
+		hl(0, "TelescopePromptBorder", { fg = pink })
+		hl(0, "TelescopeResultsBorder", { fg = pink })
+		hl(0, "TelescopePreviewBorder", { fg = pink })
+
+		hl(0, "TelescopePromptTitle", { fg = bg_dark, bg = purple, bold = true })
+		hl(0, "TelescopeResultsTitle", { fg = bg_dark, bg = pink, bold = true }) -- Pink for Results
+		hl(0, "TelescopePreviewTitle", { fg = bg_dark, bg = green, bold = true }) -- Green for Preview
+
+		hl(0, "TelescopeSelection", { bg = selection_bg, fg = "#ffffff", bold = true })
+		hl(0, "TelescopeMatching", { fg = pink, bold = true })
+		hl(0, "TelescopePromptPrefix", { fg = purple })
+		hl(0, "TelescopeFileName", { fg = "#ffffff" })
+
+		hl(0, "TelescopeResultsNumber", { fg = bg_dark })
+		hl(0, "TelescopeResultsSpecialComment", { fg = bg_dark })
+
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
 
-		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
 
 		vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "󰋖 search help" })
