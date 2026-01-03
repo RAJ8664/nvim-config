@@ -18,12 +18,10 @@ return {
 
 		hl(0, "NeoTreeMixedBorder", { fg = mixed_color, bold = true })
 		hl(0, "NeoTreeFloatTitle", { fg = bg_dark, bg = mixed_color, bold = true })
-
 		hl(0, "NeoTreeTabActive", { fg = mixed_color, bg = bg_dark, bold = true, underline = true })
 		hl(0, "NeoTreeTabInactive", { fg = purple, bg = bg_dark })
 		hl(0, "NeoTreeTabSeparatorActive", { fg = bg_dark, bg = bg_dark })
 		hl(0, "NeoTreeTabSeparatorInactive", { fg = bg_dark, bg = bg_dark })
-
 		hl(0, "NeoTreeMessage", { fg = purple, italic = true })
 
 		require("neo-tree").setup(opts)
@@ -41,7 +39,6 @@ return {
 			{ "╰", "NeoTreeMixedBorder" },
 			{ "│", "NeoTreeMixedBorder" },
 		},
-
 		source_selector = {
 			winbar = true,
 			content_layout = "center",
@@ -51,25 +48,10 @@ return {
 				{ source = "git_status", display_name = " 󰊢 Git " },
 			},
 		},
-
-		default_component_configs = {
-			indent = {
-				with_markers = true,
-				indent_marker = "│",
-				last_indent_marker = "└",
-				indent_size = 2,
-			},
-			icon = {
-				folder_closed = "",
-				folder_open = "",
-				folder_empty = "󰜌",
-			},
-		},
-
 		window = {
 			position = "float",
 			popup = {
-				size = { height = "40", width = "80" },
+				size = { height = "45", width = "65" },
 				position = "50%",
 			},
 			mappings = {
@@ -78,15 +60,12 @@ return {
 				["l"] = "open",
 				["h"] = "close_node",
 				["P"] = { "toggle_preview", config = { use_float = true } },
-
-				["/"] = "fuzzy_finder",
-				["f"] = "filter_on_submit",
-
 				["<Tab>"] = "next_source",
 				["<S-Tab>"] = "prev_source",
+				["/"] = "fuzzy_finder",
+				["f"] = "filter_on_submit",
 			},
 		},
-
 		filesystem = {
 			filtered_items = {
 				visible = true,
@@ -99,9 +78,29 @@ return {
 				["<C-n>"] = "move_cursor_down",
 				["<up>"] = "move_cursor_up",
 				["<C-p>"] = "move_cursor_up",
+				["<esc>"] = "close",
+			},
+			filter_mappings = {
+				["<esc>"] = "close",
+				["<C-c>"] = "close",
 			},
 		},
-
+		buffers = {
+			window = {
+				mappings = {
+					["/"] = "noop",
+					["f"] = "noop",
+				},
+			},
+		},
+		git_status = {
+			window = {
+				mappings = {
+					["/"] = "noop",
+					["f"] = "noop",
+				},
+			},
+		},
 		event_handlers = {
 			{
 				event = "file_opened",
