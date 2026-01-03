@@ -10,4 +10,3 @@ return {
 		vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", {})
 	end,
 }
-
