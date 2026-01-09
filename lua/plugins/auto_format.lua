@@ -9,7 +9,7 @@ return {
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
-				python = { "black" },
+				python = { "ruff_format" },
 				javascript = { "biome-check" },
 				typescript = { "biome-check" },
 				html = { "prettier" },
