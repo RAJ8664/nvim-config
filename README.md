@@ -1,6 +1,11 @@
 <div align="center">
 
-# 👨‍💻 My Personal Code Engine
+# 👨‍💻 Code Engine
+
+**A fully customized and high-performance Neovim setup designed to boost productivity and provide an IDE-like experience inside the terminal.**
+
+[![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?style=for-the-badge&logo=neovim&logoColor=white)](https://neovim.io/)
+[![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white)](https://lua.org)
 
 </div>
 
@@ -175,97 +180,124 @@ This configuration is designed to be easily customizable. Here are some of the k
 
 ## ⌨️ Keybindings
 
-<div align = "center">
+- _Leader key is set to_ `space`.
 
-| Mode       | Keybinding         | Description                            |
-| :--------- | :----------------- | :------------------------------------- |
-| n          | `<C-s>`            | Save file                              |
-| i          | `<C-z>`            | Undo                                   |
-| n          | `gl`               | View diagnostics for the current line  |
-| n          | `<C-a>`            | Select all                             |
-| n          | `<leader>sn`       | Save file without auto formatting      |
-| n          | `<Esc>`            | Clear highlights                       |
-| n          | `<leader>q`        | Open diagnostic [Q]uickfix list        |
-| t          | `<Esc><Esc>`       | Exit terminal mode                     |
-| n          | `<C-h>`            | Move focus to the left window          |
-| n          | `<C-l>`            | Move focus to the right window         |
-| n          | `<C-j>`            | Move focus to the lower window         |
-| n          | `<C-k>`            | Move focus to the upper window         |
-| n          | `<leader>jc`       | Replace test case to input.txt         |
-| n          | `<leader>jr`       | Run java code                          |
-| n          | `<leader>jf`       | Run cpp code                           |
-| n, v       | `<leader>f`        | Format file or range                   |
-| n          | `<Tab>`            | Next buffer                            |
-| n          | `<S-Tab>`          | Previous buffer                        |
-| n          | `<leader>Dc`       | Debug: Start/Continue                  |
-| n          | `<leader>Dsi`      | Debug: Step Into                       |
-| n          | `<leader>DsO`      | Debug: Step Over                       |
-| n          | `<leader>Dso`      | Debug: Step Out                        |
-| n          | `<leader>Db`       | Debug: Toggle Breakpoint               |
-| n          | `<leader>DB`       | Debug: Set Conditional Breakpoint      |
-| n          | `<leader>Dt`       | Debug: Toggle UI                       |
-| n          | `<leader>Dl`       | Debug: Run Last Configuration          |
-| n          | `<F5>`             | Debug: Start/Continue                  |
-| n          | `<F1>`             | Debug: Step Into                       |
-| n          | `<F2>`             | Debug: Step Over                       |
-| n          | `<F3>`             | Debug: Step Out                        |
-| n          | `<leader>b`        | Debug: Toggle Breakpoint               |
-| n          | `<leader>B`        | Debug: Set Breakpoint                  |
-| n          | `<F7>`             | Debug: See last session result.        |
-| n          | `<Leader>;`        | Pick symbols in winbar                 |
-| n          | `[;`               | Go to start of current context         |
-| n          | `];`               | Select next context                    |
-| n, x, o    | `s`                | Flash                                  |
-| n, x, o    | `S`                | Flash Treesitter                       |
-| o          | `r`                | Remote Flash                           |
-| o, x       | `R`                | Treesitter Search                      |
-| c          | `<c-s>`            | Toggle Flash Search                    |
-| v          | `<leader>hs`       | git [s]tage hunk                       |
-| v          | `<leader>hr`       | git [r]eset hunk                       |
-| n          | `<leader>hs`       | git [s]tage hunk                       |
-| n          | `<leader>hr`       | git [r]eset hunk                       |
-| n          | `<leader>hS`       | git [S]tage buffer                     |
-| n          | `<leader>hu`       | git [u]ndo stage hunk                  |
-| n          | `<leader>hR`       | git [R]eset buffer                     |
-| n          | `<leader>hp`       | git [p]review hunk                     |
-| n          | `<leader>hb`       | git [b]lame line                       |
-| n          | `<leader>hd`       | git [d]iff against index               |
-| n          | `<leader>hD`       | git [D]iff against last commit         |
-| n          | `<leader>gt`       | [T]oggle git show [b]lame line         |
-| n          | `<leader>tD`       | [T]oggle git show [D]eleted            |
-| n          | `<C-b>`            | NeoTree reveal                         |
-| n, v       | `<leader>aa`       | Sidekick Toggle CLI                    |
-| n          | `<leader>as`       | Sidekick Select CLI                    |
-| v          | `<leader>as`       | Sidekick Send Visual Selection         |
-| n, v       | `<leader>ap`       | Sidekick Select Prompt                 |
-| n, x, i, t | `<c-.>`            | Sidekick Switch Focus                  |
-| n, v       | `<leader>ac`       | Sidekick Claude Toggle                 |
-| n          | `<leader>sh`       | [S]earch [H]elp                        |
-| n          | `<leader>sk`       | [S]earch [K]eymaps                     |
-| n          | `<leader>sf`       | [S]earch [F]iles                       |
-| n          | `<leader>ss`       | [S]earch [S]elect Telescope            |
-| n          | `<leader>sw`       | [S]earch current [W]ord                |
-| n          | `<leader>sg`       | [S]earch by [G]rep                     |
-| n          | `<leader>sd`       | [S]earch [D]iagnostics                 |
-| n          | `<leader>sr`       | [S]earch [R]esume                      |
-| n          | `<leader>s.`       | [S]earch Recent Files ("." for repeat) |
-| n          | `<leader><leader>` | [ ] Find existing buffers              |
-| n          | `<leader>/`        | [/] Fuzzily search in current buffer   |
-| n          | `<leader>s/`       | [S]earch [/] in Open Files             |
-| n          | `<leader>sn`       | [S]earch [N]eovim files                |
+<details open>
+<summary><b>🚀 Core & Navigation</b></summary>
 
-</div>
+| Mode | Key          | Action                             |
+| :--- | :----------- | :--------------------------------- |
+| `n`  | `<C-s>`      | **Save file**                      |
+| `i`  | `<C-z>`      | Undo                               |
+| `n`  | `<C-a>`      | Select all                         |
+| `n`  | `<leader>sn` | Save file without auto formatting  |
+| `n`  | `<Esc>`      | Clear search highlights            |
+| `t`  | `<Esc><Esc>` | Exit terminal mode                 |
+| `n`  | `<C-h>`      | Move focus to the **left** window  |
+| `n`  | `<C-l>`      | Move focus to the **right** window |
+| `n`  | `<C-j>`      | Move focus to the **lower** window |
+| `n`  | `<C-k>`      | Move focus to the **upper** window |
+| `n`  | `<Tab>`      | Next buffer                        |
+| `n`  | `<S-Tab>`    | Previous buffer                    |
+| `n`  | `<C-b>`      | NeoTree reveal                     |
+
+</details>
+
+<details>
+<summary><b>🔍 Search & Discovery (Telescope / Flash)</b></summary>
+
+| Mode      | Key                | Action                           |
+| :-------- | :----------------- | :------------------------------- |
+| `n`       | `<leader>sf`       | [S]earch [F]iles                 |
+| `n`       | `<leader>sg`       | [S]earch by [G]rep               |
+| `n`       | `<leader>sw`       | [S]earch current [W]ord          |
+| `n`       | `<leader>sk`       | [S]earch [K]eymaps               |
+| `n`       | `<leader>sh`       | [S]earch [H]elp                  |
+| `n`       | `<leader>ss`       | [S]earch [S]elect Telescope      |
+| `n`       | `<leader>sd`       | [S]earch [D]iagnostics           |
+| `n`       | `<leader>sr`       | [S]earch [R]esume                |
+| `n`       | `<leader>s.`       | [S]earch Recent Files            |
+| `n`       | `<leader><leader>` | Find existing buffers            |
+| `n`       | `<leader>/`        | Fuzzily search in current buffer |
+| `n`       | `<leader>s/`       | [S]earch [/] in Open Files       |
+| `n`       | `<leader>sn`       | [S]earch [N]eovim files          |
+| `n, x, o` | `s`                | **Flash**                        |
+| `n, x, o` | `S`                | **Flash Treesitter**             |
+| `o`       | `r`                | Remote Flash                     |
+| `o, x`    | `R`                | Treesitter Search                |
+| `c`       | `<c-s>`            | Toggle Flash Search              |
+
+</details>
+
+<details>
+<summary><b>🛠️ LSP, Logic & Development</b></summary>
+
+| Mode   | Key          | Action                            |
+| :----- | :----------- | :-------------------------------- |
+| `n, v` | `<leader>f`  | **Format file or range**          |
+| `n`    | `gl`         | View diagnostics for current line |
+| `n`    | `<leader>q`  | Open diagnostic [Q]uickfix list   |
+| `n`    | `<Leader>;`  | Pick symbols in winbar            |
+| `n`    | `[;`         | Go to start of current context    |
+| `n`    | `];`         | Select next context               |
+| `n`    | `<leader>jc` | Replace test case to `input.txt`  |
+| `n`    | `<leader>jr` | **Run Java code**                 |
+| `n`    | `<leader>jf` | **Run CPP code**                  |
+
+</details>
+
+<details>
+<summary><b>🐞 Debugging (DAP)</b></summary>
+
+| Key           | Action                     | Alt Key     |
+| :------------ | :------------------------- | :---------- |
+| `<leader>Dc`  | Debug: Start/Continue      | `<F5>`      |
+| `<leader>Db`  | Debug: Toggle Breakpoint   | `<leader>b` |
+| `<leader>Dsi` | Debug: Step Into           | `<F1>`      |
+| `<leader>DsO` | Debug: Step Over           | `<F2>`      |
+| `<leader>Dso` | Debug: Step Out            | `<F3>`      |
+| `<leader>DB`  | Set Conditional Breakpoint | `<leader>B` |
+| `<leader>Dt`  | Toggle Debug UI            | —           |
+| `<leader>Dl`  | Run Last Configuration     | —           |
+| `<F7>`        | See last session result    | —           |
+
+</details>
+
+<details>
+<summary><b>🎋 Git Integration (Gitsigns)</b></summary>
+
+| Mode   | Key          | Action                         |
+| :----- | :----------- | :----------------------------- |
+| `n, v` | `<leader>hs` | git [s]tage hunk               |
+| `n, v` | `<leader>hr` | git [r]eset hunk               |
+| `n`    | `<leader>hS` | git [S]tage buffer             |
+| `n`    | `<leader>hu` | git [u]ndo stage hunk          |
+| `n`    | `<leader>hR` | git [R]eset buffer             |
+| `n`    | `<leader>hp` | git [p]review hunk             |
+| `n`    | `<leader>hb` | git [b]lame line               |
+| `n`    | `<leader>hd` | git [d]iff against index       |
+| `n`    | `<leader>hD` | git [D]iff against last commit |
+| `n`    | `<leader>gt` | [T]oggle git show [b]lame line |
+| `n`    | `<leader>tD` | [T]oggle git show [D]eleted    |
+
+</details>
+
+<details>
+<summary><b>🤖 Sidekick AI Integration</b></summary>
+
+| Mode   | Key          | Action                         |
+| :----- | :----------- | :----------------------------- |
+| `n, v` | `<leader>aa` | Sidekick Toggle CLI            |
+| `n`    | `<leader>as` | Sidekick Select CLI            |
+| `v`    | `<leader>as` | Sidekick Send Visual Selection |
+| `n, v` | `<leader>ap` | Sidekick Select Prompt         |
+| `all`  | `<c-.>`      | Sidekick Switch Focus          |
+| `n, v` | `<leader>ac` | Sidekick Claude Toggle         |
+
+</details>
 
 ---
 
 ## 🙏 Credits
 
 This configuration was inspired by the many amazing Neovim users and plugin authors in the community. A special thanks to the creators of the plugins and tools that make this setup possible.
-
----
-
-<div align="center">
-
-_Made with ❤️ and Lua_
-
-</div>
