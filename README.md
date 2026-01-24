@@ -20,10 +20,10 @@
 |                                                                                                                   |                                                                                                                   |
 | :---------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
 |                                                                                                                   |                                                                                                                   |
-| ![img](https://res.cloudinary.com/dzgoq3ikq/image/upload/v1761509001/Screenshot_27-Oct_01-31-28_11602_ru0ebv.png) | ![img](https://res.cloudinary.com/dzgoq3ikq/image/upload/v1761659282/Screenshot_29-Oct_00-44-36_22035_r58cjo.png) |
-|                               ![img](pictures/Screenshot_14-Jul_14-21-01_2361.png)                                |                               ![img](pictures/Screenshot_14-Jul_14-21-33_28692.png)                               |
+| ![img](https://res.cloudinary.com/dzgoq3ikq/image/upload/v1769244334/Screenshot_24-Jan_14-15-12_31224_a1kvox.png) | ![img](https://res.cloudinary.com/dzgoq3ikq/image/upload/v1769244071/Screenshot_24-Jan_14-10-26_29206_py1h7n.png) |
+|                               ![img](pictures/Screenshot_14-Jul_14-21-01_2361.png)                                | ![img](https://res.cloudinary.com/dzgoq3ikq/image/upload/v1769243670/Screenshot_24-Jan_13-57-02_28640_qv76js.png) |
 |                               ![img](pictures/Screenshot_14-Jul_14-21-50_1862.png)                                |                               ![img](pictures/Screenshot_14-Jul_14-23-27_3904.png)                                |
-|                                ![img](pictures/Screenshot_14-Jul_14-33-34_299.png)                                |                               ![img](pictures/Screenshot_14-Jul_15-06-27_23844.png)                               |
+|                                ![img](pictures/Screenshot_14-Jul_14-33-34_299.png)                                | ![img](https://res.cloudinary.com/dzgoq3ikq/image/upload/v1769244237/Screenshot_24-Jan_14-13-18_10553_ndublr.png) |
 
 ---
 
@@ -239,4 +239,3 @@ This configuration was inspired by the many amazing Neovim users and plugin auth
 _Made with ❤️ and Lua_
 
 </div>
-
