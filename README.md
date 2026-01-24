@@ -17,13 +17,43 @@
 
 ## 📸 Screenshots
 
-|                                                                                                                   |                                                                                                                   |
-| :---------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
-|                                                                                                                   |                                                                                                                   |
-| ![img](https://res.cloudinary.com/dzgoq3ikq/image/upload/v1769244334/Screenshot_24-Jan_14-15-12_31224_a1kvox.png) | ![img](https://res.cloudinary.com/dzgoq3ikq/image/upload/v1769244071/Screenshot_24-Jan_14-10-26_29206_py1h7n.png) |
-|                               ![img](pictures/Screenshot_14-Jul_14-21-01_2361.png)                                | ![img](https://res.cloudinary.com/dzgoq3ikq/image/upload/v1769243670/Screenshot_24-Jan_13-57-02_28640_qv76js.png) |
-|                               ![img](pictures/Screenshot_14-Jul_14-21-50_1862.png)                                |                               ![img](pictures/Screenshot_14-Jul_14-23-27_3904.png)                                |
-|                                ![img](pictures/Screenshot_14-Jul_14-33-34_299.png)                                | ![img](https://res.cloudinary.com/dzgoq3ikq/image/upload/v1769244237/Screenshot_24-Jan_14-13-18_10553_ndublr.png) |
+<table>
+  <tr>
+    <th>File Tree</th>
+    <th>Editor</th>
+  </tr>
+  <tr>
+    <td><img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1769244334/Screenshot_24-Jan_14-15-12_31224_a1kvox.png" width="500" height="250"/></td>
+    <td><img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1769244071/Screenshot_24-Jan_14-10-26_29206_py1h7n.png" width="500" height="250"/></td>
+  </tr>
+
+  <tr>
+    <th>Terminal</th>
+    <th>Terminal</th>
+  </tr>
+  <tr>
+    <td><img src="pictures/Screenshot_14-Jul_14-21-01_2361.png" width="500" height="250"/></td>
+    <td><img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1769243670/Screenshot_24-Jan_13-57-02_28640_qv76js.png" width="500" height="250"/></td>
+  </tr>
+
+  <tr>
+    <th>Lazy Git</th>
+    <th>Editor</th>
+  </tr>
+  <tr>
+    <td><img src="pictures/Screenshot_14-Jul_14-21-50_1862.png" width="500" height="250"/></td>
+    <td><img src="pictures/Screenshot_14-Jul_14-23-27_3904.png" width="500" height="250"/></td>
+  </tr>
+
+  <tr>
+    <th>Typr Stats</th>
+    <th>Telescope</th>
+  </tr>
+  <tr>
+    <td><img src="pictures/Screenshot_14-Jul_14-33-34_299.png" width="500" height="250"/></td>
+    <td><img src="https://res.cloudinary.com/dzgoq3ikq/image/upload/v1769244237/Screenshot_24-Jan_14-13-18_10553_ndublr.png" width="500" height="250"/></td>
+  </tr>
+</table>
 
 ---
 
