@@ -296,6 +296,17 @@ This configuration is designed to be easily customizable. Here are some of the k
 
 </details>
 
+<details> 
+<summary><b>💻 Terminal </b></summary>
+
+| Mode | Key       | Action                                   |
+| :--- | :-------- | :--------------------------------------- |
+| `n`  | `Alt + 1` | Toggle 1st ToggleTerm Terminal instance. |
+| `n`  | `Alt + 2` | Toggle 2nd ToggleTerm Terminal instance. |
+| `n`  | `Alt + i` | Toggle ith ToggleTerm Terminal instance. |
+
+</details>
+
 ---
 
 ## 🙏 Credits
