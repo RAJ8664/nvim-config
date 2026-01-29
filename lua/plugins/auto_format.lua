@@ -10,12 +10,14 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "ruff_format" },
-				javascript = { "biome-check" },
-				typescript = { "biome-check" },
-				html = { "prettier" },
-				css = { "prettier" },
-				json = { "prettier" },
-				yaml = { "prettier" },
+				javascript = { "prettierd", "prettier" },
+				typescript = { "prettierd", "prettier" },
+				javascriptreact = { "prettierd", "prettier" },
+				typescriptreact = { "prettierd", "prettier" },
+				html = { "prettierd", "prettier" },
+				css = { "prettierd", "prettier" },
+				json = { "prettierd", "prettier" },
+				yaml = { "prettierd", "prettier" },
 				markdown = { "prettier" },
 				sh = { "shfmt" },
 				go = { "gofmt" },
@@ -29,6 +31,26 @@ return {
 				xml = { "xmlformat" },
 			},
 			formatters = {
+				prettier = {
+					prepend_args = {
+						"--tab-width=2",
+						"--use-tabs=false",
+						"--semi=false",
+						"--single-quote",
+						"--trailing-comma=all",
+						"--print-width=100",
+					},
+				},
+				prettierd = {
+					prepend_args = {
+						"--tab-width=2",
+						"--use-tabs=false",
+						"--semi=false",
+						"--single-quote",
+						"--trailing-comma=all",
+						"--print-width=100",
+					},
+				},
 				xmlformat = {
 					command = "xmlformat",
 					args = {},
@@ -38,17 +60,6 @@ return {
 					command = "xmllint",
 					args = { "--format", "-" },
 					stdin = true,
-				},
-				prettier = {
-					prepend_args = {
-						"--tab-width=4",
-						"--single-quote",
-						"--trailing-comma=all",
-						"--use-tabs",
-						"--semi=false",
-						"--trailing-comma=all",
-						"--print-width=100",
-					},
 				},
 				eclipse_formatter = {
 					command = "java",

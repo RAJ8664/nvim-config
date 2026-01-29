@@ -83,3 +83,12 @@ vim.api.nvim_create_user_command("LspDetachAll", function()
 		end
 	end, {})
 end, {})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "javascript", "typescript", "html", "css", "javascriptreact", "typescriptreact" },
+	callback = function()
+		vim.opt.tabstop = 2
+		vim.opt.shiftwidth = 2
+		vim.o.softtabstop = 2
+	end,
+})
