@@ -167,7 +167,6 @@ return {
 				},
 				ghost_text = {
 					enabled = true,
-					highlight = "Comment",
 				},
 				documentation = {
 					window = {
@@ -175,14 +174,11 @@ return {
 						winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
 					},
 					auto_show = true,
-					auto_show_delay = 350,
 				},
 			},
 
 			signature = {
 				enabled = true,
-				auto_show = true,
-				auto_show_delay = 500,
 				window = {
 					border = "rounded",
 					winhighlight = "Normal:BlinkCmpSignatureHelp,FloatBorder:BlinkCmpSignatureHelpBorder",

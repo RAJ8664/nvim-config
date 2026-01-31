@@ -78,7 +78,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.api.nvim_create_user_command("LspDetachAll", function()
 	vim.api.nvim_create_user_command("LspDetachAll", function()
-		for _, client in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
+		for _, client in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
 			vim.lsp.buf_detach_client(0, client.id)
 		end
 	end, {})
