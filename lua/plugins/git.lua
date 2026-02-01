@@ -131,4 +131,50 @@ return {
 			end, { desc = "Git: Copy repo homepage" })
 		end,
 	},
+
+	{
+		"kdheepak/lazygit.nvim",
+		lazy = true,
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim", -- For the telescope extension
+		},
+		keys = {
+			-- The most common trigger
+			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit (Root Dir)" },
+			-- Useful for working on submodules or nested repos
+			{ "<leader>lf", "<cmd>LazyGitCurrentFile<cr>", desc = "LazyGit (Current File)" },
+			-- Git history/commits
+			{ "<leader>ll", "<cmd>LazyGitFilter<cr>", desc = "LazyGit Commits" },
+		},
+		config = function()
+			-- 1. Configuration variables
+			vim.g.lazygit_floating_window_winblend = 0 -- 0 to 100 for transparency
+			vim.g.lazygit_floating_window_scaling_factor = 0.85
+			vim.g.lazygit_floating_window_border_chars = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+			vim.g.lazygit_use_neovim_remote = 1 -- Better integration if nvr is installed
+
+			-- 2. Load Telescope Extension
+			-- This allows you to search through your git repositories
+			local ok, telescope = pcall(require, "telescope")
+			if ok then
+				telescope.load_extension("lazygit")
+			end
+
+			-- 3. Automatically track project roots for Telescope
+			-- This ensures any git repo you visit shows up in the Telescope switcher
+			vim.api.nvim_create_autocmd("BufEnter", {
+				callback = function()
+					require("lazygit.utils").project_root_dir()
+				end,
+			})
+		end,
+	},
 }
