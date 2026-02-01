@@ -15,7 +15,7 @@
   "flash.nvim": { "branch": "main", "commit": "fcea7ff883235d9024dc41e638f164a450c14ca2" },
   "friendly-snippets": { "branch": "main", "commit": "6cd7280adead7f586db6fccbd15d2cac7e2188b9" },
   "fugit2.nvim": { "branch": "main", "commit": "619b3dc130f50e0ecb0cb0026133b393ec202fae" },
-  "gitlink.nvim": { "branch": "master", "commit": "71ba861df22882049632077a7b502dbcea04b7ad" },
+  "gitlinker.nvim": { "branch": "master", "commit": "cc59f732f3d043b626c8702cb725c82e54d35c25" },
   "gitsigns.nvim": { "branch": "main", "commit": "abf82a65f185bd54adc0679f74b7d6e1ada690c9" },
   "gruvbox": { "branch": "master", "commit": "697c00291db857ca0af00ec154e5bd514a79191f" },
   "kanagawa-wave": { "branch": "master", "commit": "aef7f5cec0a40dbe7f3304214850c472e2264b10" },

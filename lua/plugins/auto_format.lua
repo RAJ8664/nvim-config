@@ -11,7 +11,7 @@ return {
 				lua = { "stylua" },
 				python = { "ruff_format" },
 				javascript = { "prettierd", "prettier" },
-				typescript = { "prettierd", "prettier" },
+				typescript = { "prettierd", "prettier", "biome" },
 				javascriptreact = { "prettierd", "prettier" },
 				typescriptreact = { "prettierd", "prettier" },
 				html = { "prettierd", "prettier" },

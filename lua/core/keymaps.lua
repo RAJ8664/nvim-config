@@ -79,17 +79,3 @@ vim.keymap.set("n", "<leader>jf", function()
 end, {
 	desc = " run C++ program",
 })
-
-vim.keymap.set("n", "<leader>gc", function()
-	require("gitlink").copy()
-end, {
-	desc = "copy github link",
-	silent = true,
-})
-
-vim.keymap.set("n", "<leader>go", function()
-	require("gitlink").open()
-end, {
-	desc = "open in github",
-	silent = true,
-})
