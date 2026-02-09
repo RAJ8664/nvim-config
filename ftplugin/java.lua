@@ -64,7 +64,15 @@ local config = {
 }
 require("jdtls").start_or_attach(config)
 
-vim.keymap.set("n", "<leader>ji", "<Cmd>lua require'jdtls'.organize_imports()<CR>", { desc = " organize imports" })
+vim.keymap.set(
+	"n",
+	"<leader>ji",
+	"<Cmd>lua require'jdtls'.organize_imports()<CR>",
+	{ desc = "<U+F03A> organize imports" }
+)
+-- Note: <leader>ji for organize imports is now handled globally in keymaps.lua
+-- The global handler automatically uses jdtls.organize_imports() for Java files
+
 --vim.keymap.set('n', '<leader>crv', "<Cmd>lua require('jdtls').extract_variable()<CR>", { desc = 'Extract Variable' })
 --vim.keymap.set('v', '<leader>crv', "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", { desc = 'Extract Variable' })
 --vim.keymap.set('n', '<leader>crc', "<Cmd>lua require('jdtls').extract_constant()<CR>", { desc = 'Extract Constant' })

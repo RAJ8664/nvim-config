@@ -14,7 +14,7 @@ vim.keymap.set("i", "<C-z>", "<C-o>u", { noremap = true, silent = true })
 vim.keymap.set("n", "gl", function()
 	vim.diagnostic.open_float()
 end, {
-	desc = " view diagnostics (line)",
+	desc = " view diagnostics (line)",
 })
 
 --select all in normal mode;
@@ -50,6 +50,7 @@ vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left wind
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "Toggle Neo-tree" })
 
 -- my cpp related stuffs;
 -- used to replace the copied test case to input.txt;
@@ -68,7 +69,7 @@ vim.keymap.set("n", "<leader>jr", function()
 	local script = file_dir .. "/run_java.sh"
 	vim.cmd("terminal bash " .. script)
 end, {
-	desc = " run Java program",
+	desc = " run Java program",
 })
 
 -- to run the cpp code and display the output along with dbg file;
@@ -77,5 +78,5 @@ vim.keymap.set("n", "<leader>jf", function()
 	local script = file_dir .. "/run_cpp.sh"
 	vim.cmd("terminal bash " .. script)
 end, {
-	desc = " run C++ program",
+	desc = " run C++ program",
 })

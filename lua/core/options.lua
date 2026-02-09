@@ -10,7 +10,7 @@ vim.opt.number = false
 vim.g.have_nerd_font = true
 vim.opt.mouse = "a"
 vim.opt.showmode = false
-
+vim.opt.termguicolors = true
 -- For Menus
 --
 vim.opt.mouse = "a"
