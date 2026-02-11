@@ -72,6 +72,7 @@ require("lazy").setup({
 	require("plugins.rovo-dev"),
 	-- require("plugins.smooth_scroll"),
 	require("plugins.namu"),
+	require("plugins.js-ts-import"),
 
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
