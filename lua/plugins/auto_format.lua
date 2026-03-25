@@ -3,21 +3,25 @@ return {
 	event = { "BufWritePre" }, -- Lazy load on file save
 	config = function()
 		require("conform").setup({
-			format_on_save = {
-				lsp_fallback = true,
-				timeout_ms = 2000,
-			},
+			format_on_save = function(bufnr)
+				-- Disable autoformat on certain filetypes
+				local disable_filetypes = { c = true, cpp = true }
+				return {
+					timeout_ms = 2000,
+					lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+				}
+			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
-				python = { "ruff_format" },
-				javascript = { "prettierd", "prettier" },
-				typescript = { "prettierd", "prettier", "biome" },
-				javascriptreact = { "prettierd", "prettier" },
-				typescriptreact = { "prettierd", "prettier" },
-				html = { "prettierd", "prettier" },
-				css = { "prettierd", "prettier" },
-				json = { "prettierd", "prettier" },
-				yaml = { "prettierd", "prettier" },
+				python = { "black", "ruff_format" },
+				javascript = { "prettier", "prettierd", stop_after_first = true },
+				typescript = { "prettier", "prettierd", stop_after_first = true },
+				javascriptreact = { "prettier", "prettierd", stop_after_first = true },
+				typescriptreact = { "prettier", "prettierd", stop_after_first = true },
+				html = { "prettier", "prettierd", stop_after_first = true },
+				css = { "prettier", "prettierd", stop_after_first = true },
+				json = { "prettier", "prettierd", stop_after_first = true },
+				yaml = { "prettier", "prettierd", stop_after_first = true },
 				markdown = { "prettier" },
 				sh = { "shfmt" },
 				go = { "gofmt" },
@@ -25,9 +29,8 @@ return {
 				java = { "astyle" },
 				c = { "clang_format" },
 				cpp = { "clang_format" },
-				sql = { "sql_formatter" }, -- Add SQL formatter
+				sql = { "sql_formatter" },
 				php = { "phpcbf" },
-				rust = { "rustfmt" },
 				xml = { "xmlformat" },
 			},
 			formatters = {

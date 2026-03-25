@@ -92,3 +92,5 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.o.softtabstop = 2
 	end,
 })
+
+vim.api.nvim_set_keymap("n", "<leader>ac", ":CodeCompanionChat Toggle<CR>", { noremap = true, silent = true })

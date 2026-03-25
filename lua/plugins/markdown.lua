@@ -13,7 +13,7 @@ return {
 			vim.g.mkdp_command_for_global = 0
 
 			-- ✅ Set custom browser (firefox)
-			vim.g.mkdp_browser = "/usr/bin/firefox"
+			-- vim.g.mkdp_browser = "/usr/bin/firefox"
 
 			-- ✅ Set custom port (4040)
 			vim.g.mkdp_port = "4040"

@@ -1,12 +1,18 @@
 return { -- Highlight, edit, and navigate code
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
-	main = "nvim-treesitter.configs", -- Sets main module to use for opts
-	-- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-	opts = {
-		ensure_installed = {
+	config = function()
+		-- Setup treesitter
+		require("nvim-treesitter").setup({
+			-- Directory to install parsers and queries to
+			install_dir = vim.fn.stdpath("data") .. "/site",
+		})
+
+		-- Install parsers
+		local parsers = {
 			"bash",
 			"c",
+			"cpp",
 			"diff",
 			"html",
 			"lua",
@@ -17,16 +23,18 @@ return { -- Highlight, edit, and navigate code
 			"vim",
 			"vimdoc",
 			"java",
-		},
-		-- Autoinstall languages that are not installed
-		auto_install = true,
-		highlight = {
-			enable = true,
-			-- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-			--  If you are experiencing weird indenting issues, add the language to
-			--  the list of additional_vim_regex_highlighting and disabled languages for indent.
-			additional_vim_regex_highlighting = { "ruby" },
-		},
-		indent = { enable = true, disable = { "ruby" } },
-	},
+			"javascript",
+			"typescript",
+			"python",
+			"json",
+			"tsx",
+			"css",
+			"yaml",
+		}
+
+		require("nvim-treesitter").install(parsers)
+
+		-- Configure highlighting and indentation
+		vim.treesitter.language.register("markdown", "mdx")
+	end,
 }
